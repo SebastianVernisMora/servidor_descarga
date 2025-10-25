@@ -11,7 +11,11 @@
 ## Build/Run Commands
 ```bash
 # Run Flask app (default port 3000) - MAPA INTERACTIVO AVANZADO
-python3 app_optimized.py
+# ⚡ NUEVOS PARÁMETROS: 10,000 círculos x 1,300 segmentos = 13M números
+export PATH="$(pwd)/venv/bin:$PATH" && python3 app_optimized.py
+
+# Start app in background
+./start_app.sh
 
 # Run with custom port
 python3 app_optimized.py --port=8080
