@@ -1,0 +1,254 @@
+{
+  "elementos": [
+    {
+      "numero": 2,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.1,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 3,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 5,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 3,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 7,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 4,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 11,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 5,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 13,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 5,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 17,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 19,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 23,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 7,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 29,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 31,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 37,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 41,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 43,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 47,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 53,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 11,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 59,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 11,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 4.1887902047863905
+      }
+    }
+  ],
+  "estadisticas": {
+    "total_numeros": 60,
+    "total_primos": 17,
+    "densidad_primos": 28.333333333333332,
+    "patrones": {
+      "gemelos": 11,
+      "primos": 11,
+      "sexy": 15,
+      "sophie_germain": 6,
+      "palindromicos": 1,
+      "mersenne": 3,
+      "fermat": 3
+    },
+    "configuracion": {
+      "circulos": 5,
+      "segmentos": 12,
+      "mapeo": "arquimedes"
+    }
+  },
+  "parametros": {
+    "num_circulos": 5,
+    "divisiones_por_circulo": 12,
+    "tipo_mapeo": "arquimedes",
+    "filtros": {
+      "regulares": true,
+      "compuestos": false
+    }
+  },
+  "timestamp": "2025-10-23T20:03:36.431020"
+}

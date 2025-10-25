@@ -1,0 +1,5048 @@
+{
+  "elementos": [
+    {
+      "numero": 1,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 0,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.0625,
+        "angulo": -1.3089969389957472
+      }
+    },
+    {
+      "numero": 2,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 3,
+      "posicion": {
+        "radio": 0.0625,
+        "angulo": -1.1780972450961724
+      }
+    },
+    {
+      "numero": 3,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 0,
+      "segmento": 4,
+      "posicion": {
+        "radio": 0.0625,
+        "angulo": -1.0471975511965979
+      }
+    },
+    {
+      "numero": 4,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 0,
+      "segmento": 4,
+      "posicion": {
+        "radio": 0.0625,
+        "angulo": -1.0471975511965979
+      }
+    },
+    {
+      "numero": 5,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 0,
+      "segmento": 5,
+      "posicion": {
+        "radio": 0.0625,
+        "angulo": -0.916297857297023
+      }
+    },
+    {
+      "numero": 6,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.7853981633974483
+      }
+    },
+    {
+      "numero": 7,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.7853981633974483
+      }
+    },
+    {
+      "numero": 8,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.7853981633974483
+      }
+    },
+    {
+      "numero": 9,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 7,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.6544984694978736
+      }
+    },
+    {
+      "numero": 10,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 7,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.6544984694978736
+      }
+    },
+    {
+      "numero": 11,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 12,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 13,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 14,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.39269908169872414
+      }
+    },
+    {
+      "numero": 15,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.39269908169872414
+      }
+    },
+    {
+      "numero": 16,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.39269908169872414
+      }
+    },
+    {
+      "numero": 17,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.26179938779914935
+      }
+    },
+    {
+      "numero": 18,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.26179938779914935
+      }
+    },
+    {
+      "numero": 19,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.26179938779914935
+      }
+    },
+    {
+      "numero": 20,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.26179938779914935
+      }
+    },
+    {
+      "numero": 21,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 11,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.1308996938995748
+      }
+    },
+    {
+      "numero": 22,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 1,
+      "segmento": 11,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.1308996938995748
+      }
+    },
+    {
+      "numero": 23,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 1,
+      "segmento": 11,
+      "posicion": {
+        "radio": 0.1875,
+        "angulo": -0.1308996938995748
+      }
+    },
+    {
+      "numero": 24,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 25,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 26,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 27,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 28,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.0
+      }
+    },
+    {
+      "numero": 29,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.1308996938995748
+      }
+    },
+    {
+      "numero": 30,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.1308996938995748
+      }
+    },
+    {
+      "numero": 31,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.1308996938995748
+      }
+    },
+    {
+      "numero": 32,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.1308996938995748
+      }
+    },
+    {
+      "numero": 33,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.26179938779914935
+      }
+    },
+    {
+      "numero": 34,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.26179938779914935
+      }
+    },
+    {
+      "numero": 35,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.26179938779914935
+      }
+    },
+    {
+      "numero": 36,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.26179938779914935
+      }
+    },
+    {
+      "numero": 37,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 2,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.26179938779914935
+      }
+    },
+    {
+      "numero": 38,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.3926990816987239
+      }
+    },
+    {
+      "numero": 39,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.3926990816987239
+      }
+    },
+    {
+      "numero": 40,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.3926990816987239
+      }
+    },
+    {
+      "numero": 41,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 2,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.3926990816987239
+      }
+    },
+    {
+      "numero": 42,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.3926990816987239
+      }
+    },
+    {
+      "numero": 43,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 44,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 45,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 46,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 47,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 48,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 49,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 17,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.6544984694978737
+      }
+    },
+    {
+      "numero": 50,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 17,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.6544984694978737
+      }
+    },
+    {
+      "numero": 51,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 17,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.6544984694978737
+      }
+    },
+    {
+      "numero": 52,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 2,
+      "segmento": 17,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.6544984694978737
+      }
+    },
+    {
+      "numero": 53,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 17,
+      "posicion": {
+        "radio": 0.3125,
+        "angulo": 0.6544984694978737
+      }
+    },
+    {
+      "numero": 54,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 55,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 56,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 57,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 58,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 59,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 60,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.7853981633974483
+      }
+    },
+    {
+      "numero": 61,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 62,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 63,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 64,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 65,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 66,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 19,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 0.9162978572970228
+      }
+    },
+    {
+      "numero": 67,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 68,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 69,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 70,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 71,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 72,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 73,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 3,
+      "segmento": 20,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.0471975511965979
+      }
+    },
+    {
+      "numero": 74,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 75,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 76,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 77,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 78,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 79,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 80,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 21,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.1780972450961724
+      }
+    },
+    {
+      "numero": 81,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 82,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 83,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 84,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 85,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 86,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 87,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 88,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.308996938995747
+      }
+    },
+    {
+      "numero": 89,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 90,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 91,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 92,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 93,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 94,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 95,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 3,
+      "segmento": 23,
+      "posicion": {
+        "radio": 0.4375,
+        "angulo": 1.4398966328953215
+      }
+    },
+    {
+      "numero": 96,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 97,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 98,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 99,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 100,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 101,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 102,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 103,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 104,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 24,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 105,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 106,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 107,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 108,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 109,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 110,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 111,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 112,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 25,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.7016960206944716
+      }
+    },
+    {
+      "numero": 113,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 114,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 115,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 116,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 117,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 118,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 119,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 120,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 121,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 26,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.8325957145940461
+      }
+    },
+    {
+      "numero": 122,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 123,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 124,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 125,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 126,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 127,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 128,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 129,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 130,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 27,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 1.9634954084936207
+      }
+    },
+    {
+      "numero": 131,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 132,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 133,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 134,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 135,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 136,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 137,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 138,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 139,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 140,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.0943951023931953
+      }
+    },
+    {
+      "numero": 141,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 142,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 143,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 144,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 145,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 146,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 147,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 148,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 149,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 29,
+      "posicion": {
+        "radio": 0.5625,
+        "angulo": 2.2252947962927703
+      }
+    },
+    {
+      "numero": 150,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 151,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 152,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 153,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 154,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 155,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 156,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 157,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 158,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 159,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 160,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 30,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.3561944901923444
+      }
+    },
+    {
+      "numero": 161,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 162,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 163,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 164,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 165,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 166,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 167,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 168,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 169,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 170,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 31,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.4870941840919194
+      }
+    },
+    {
+      "numero": 171,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 172,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 173,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 174,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 175,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 176,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 177,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 178,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 179,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 180,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 181,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 5,
+      "segmento": 32,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 182,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 183,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 184,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 185,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 186,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 187,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 188,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 189,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 190,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 191,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 192,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 33,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.7488935718910694
+      }
+    },
+    {
+      "numero": 193,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 194,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 195,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 196,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 197,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 198,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 199,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 200,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 201,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 202,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 203,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 204,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 34,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 2.879793265790644
+      }
+    },
+    {
+      "numero": 205,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 206,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 207,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 208,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 209,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 210,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 211,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 212,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 213,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 214,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 215,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 5,
+      "segmento": 35,
+      "posicion": {
+        "radio": 0.6875,
+        "angulo": 3.0106929596902186
+      }
+    },
+    {
+      "numero": 216,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 217,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 218,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 219,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 220,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 221,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 222,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 223,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 224,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 225,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 226,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 227,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 228,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 36,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.141592653589793
+      }
+    },
+    {
+      "numero": 229,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 230,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 231,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 232,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 233,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 234,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 235,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 236,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 237,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 238,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 239,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 240,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 37,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.2724923474893677
+      }
+    },
+    {
+      "numero": 241,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 242,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 243,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 244,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 245,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 246,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 247,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 248,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 249,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 250,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 251,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 252,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 253,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 38,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.4033920413889422
+      }
+    },
+    {
+      "numero": 254,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 255,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 256,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 257,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 258,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 259,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 260,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 261,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 262,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 263,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 264,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 265,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 266,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 39,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.534291735288517
+      }
+    },
+    {
+      "numero": 267,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 268,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 269,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 270,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 271,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 272,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 273,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 274,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 275,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 276,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 277,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 278,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 279,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 280,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 40,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.6651914291880923
+      }
+    },
+    {
+      "numero": 281,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 282,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 283,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 284,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 285,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 286,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 287,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 288,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 289,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 290,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 291,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 292,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 293,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 41,
+      "posicion": {
+        "radio": 0.8125,
+        "angulo": 3.796091123087666
+      }
+    },
+    {
+      "numero": 294,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 295,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 296,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 297,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 298,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 299,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 300,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 301,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 302,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 303,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 304,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 305,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 306,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 307,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 308,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 42,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 3.9269908169872414
+      }
+    },
+    {
+      "numero": 309,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 310,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 311,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 312,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 313,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 314,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 315,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 316,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 317,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 318,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 319,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 320,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 321,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 322,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 43,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.057890510886816
+      }
+    },
+    {
+      "numero": 323,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 324,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 325,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 326,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 327,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 328,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 329,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 330,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 331,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 332,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 333,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 334,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 335,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 336,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 337,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 44,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.1887902047863905
+      }
+    },
+    {
+      "numero": 338,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 339,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 340,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 341,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 342,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 343,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 344,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 345,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 346,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 347,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 348,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 349,
+      "es_primo": true,
+      "tipos": [
+        "gemelo",
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 350,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 351,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 352,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 45,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.319689898685966
+      }
+    },
+    {
+      "numero": 353,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 354,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 355,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 356,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 357,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 358,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 359,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 360,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 361,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 362,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 363,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 364,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 365,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 366,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 367,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 368,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 46,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.45058959258554
+      }
+    },
+    {
+      "numero": 369,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 370,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 371,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 372,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 373,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 374,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 375,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 376,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 377,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 378,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 379,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 380,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 381,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 382,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 383,
+      "es_primo": true,
+      "tipos": [
+        "primo"
+      ],
+      "circulo": 7,
+      "segmento": 47,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": 4.581489286485115
+      }
+    },
+    {
+      "numero": 384,
+      "es_primo": false,
+      "tipos": [
+        "compuesto"
+      ],
+      "circulo": 7,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.9375,
+        "angulo": -1.5707963267948966
+      }
+    }
+  ],
+  "estadisticas": {
+    "total_numeros": 384,
+    "total_primos": 76,
+    "densidad_primos": 19.791666666666664,
+    "patrones": {
+      "gemelos": 41,
+      "primos": 41,
+      "sexy": 63,
+      "sophie_germain": 15,
+      "palindromicos": 10,
+      "mersenne": 4,
+      "fermat": 4
+    },
+    "configuracion": {
+      "circulos": 8,
+      "segmentos": 48,
+      "mapeo": "arquimedes"
+    }
+  },
+  "parametros": {
+    "num_circulos": 8,
+    "divisiones_por_circulo": 48,
+    "tipo_mapeo": "arquimedes",
+    "filtros": {
+      "regulares": true,
+      "gemelos": true,
+      "primos": true,
+      "compuestos": true
+    }
+  },
+  "timestamp": "2025-10-23T20:03:36.881465"
+}

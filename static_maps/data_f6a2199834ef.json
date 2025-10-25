@@ -1,0 +1,969 @@
+{
+  "elementos": [
+    {
+      "numero": 2,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 1,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": -1.361356816555577
+      }
+    },
+    {
+      "numero": 3,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": -1.1519173063162575
+      }
+    },
+    {
+      "numero": 5,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 4,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": -0.7330382858376184
+      }
+    },
+    {
+      "numero": 7,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 11,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 13,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 17,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 19,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 23,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 29,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.041666666666666664,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 31,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 37,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 41,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 43,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 47,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 53,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 59,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 1,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.125,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 61,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 67,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 71,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 73,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 79,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 83,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 89,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.20833333333333334,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 97,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 101,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 103,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 107,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 109,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 113,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.2916666666666667,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 127,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.375,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 131,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.375,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 137,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.375,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 139,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.375,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 149,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.375,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 151,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 157,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 163,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 167,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 173,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 179,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 5,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.4583333333333333,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 181,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.5416666666666666,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 191,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.5416666666666666,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 193,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.5416666666666666,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 197,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.5416666666666666,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 199,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 6,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.5416666666666666,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 211,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 223,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 227,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 229,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 233,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 239,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 7,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.625,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 241,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 8,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.7083333333333334,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 251,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 8,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.7083333333333334,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 257,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 8,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.7083333333333334,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 263,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 8,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.7083333333333334,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 269,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 8,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.7083333333333334,
+        "angulo": 4.293509959906051
+      }
+    },
+    {
+      "numero": 271,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 9,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.7916666666666666,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 277,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 9,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.7916666666666666,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 281,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 9,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.7916666666666666,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 283,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 9,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.7916666666666666,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 293,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 9,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.7916666666666666,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 307,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 10,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.875,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 311,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 10,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.875,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 313,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 10,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.875,
+        "angulo": 0.9424777960769379
+      }
+    },
+    {
+      "numero": 317,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 10,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.875,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 331,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 337,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": -0.3141592653589793
+      }
+    },
+    {
+      "numero": 347,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": 1.780235837034216
+      }
+    },
+    {
+      "numero": 349,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 18,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": 2.199114857512855
+      }
+    },
+    {
+      "numero": 353,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 22,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": 3.0368728984701328
+      }
+    },
+    {
+      "numero": 359,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 11,
+      "segmento": 28,
+      "posicion": {
+        "radio": 0.9583333333333334,
+        "angulo": 4.293509959906051
+      }
+    }
+  ],
+  "estadisticas": {
+    "total_numeros": 360,
+    "total_primos": 72,
+    "densidad_primos": 20.0,
+    "patrones": {
+      "gemelos": 41,
+      "primos": 39,
+      "sexy": 60,
+      "sophie_germain": 14,
+      "palindromicos": 8,
+      "mersenne": 4,
+      "fermat": 4
+    },
+    "configuracion": {
+      "circulos": 12,
+      "segmentos": 30,
+      "mapeo": "lineal"
+    }
+  },
+  "parametros": {
+    "num_circulos": 12,
+    "divisiones_por_circulo": 30,
+    "tipo_mapeo": "lineal",
+    "filtros": {
+      "regulares": true,
+      "compuestos": false
+    }
+  },
+  "timestamp": "2025-10-23T20:03:37.464311"
+}

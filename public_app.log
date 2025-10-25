@@ -1,0 +1,25 @@
+ * Tip: There are .env files present. Install python-dotenv to use them.
+🚀 Iniciando aplicación MEJORADA de visualización de primos v3.2...
+🎯 Nueva interfaz interactiva disponible en /enhanced
+🔧 API mejorada disponible en /api/interactive-map
+🌐 Reemplazando aplicación en puerto público 3000...
+Servidor iniciándose en puerto 3000...
+ * Serving Flask app 'deploy_enhanced'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://172.31.7.132:3000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Oct/2025 19:59:11] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:11] "GET /enhanced HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:27] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:27] "GET /enhanced HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:27] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:27] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 19:59:27] "GET /api/number/97 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:00:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:00:30] "GET /enhanced HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:00:30] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:00:30] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:00:30] "GET /api/number/17 HTTP/1.1" 200 -

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Visualización de Números Primos</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #FFD700, #FF6B9D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .form-group { margin-bottom: 20px; }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        .number-input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .number-input:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .checkbox-item:hover { background: #e9ecef; }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        
+        .generate-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .generate-btn:disabled { opacity: 0.6; transform: none; }
+        
+        .visualization-container {
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .result-image {
+            max-width: 100%;
+            max-height: 80vh;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .loading { display: none; text-align: center; padding: 30px; }
+        .loading.show { display: block; }
+        
+        .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error {
+            background: rgba(244, 67, 54, 0.1);
+            color: #f44336;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+        
+        .metrics {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .metrics h3 { color: white; margin-bottom: 15px; }
+        
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .metric-value { font-weight: bold; color: #FFD700; }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container { 
+                grid-template-columns: 1fr; 
+                gap: 15px; 
+                max-width: 100%; 
+            }
+            .panel {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body { 
+                padding: 10px; 
+                font-size: 14px;
+            }
+            h1 { 
+                font-size: 1.8rem; 
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .container {
+                display: block;
+                max-width: 100%;
+            }
+            .panel { 
+                padding: 15px; 
+                margin-bottom: 15px;
+                border-radius: 10px;
+            }
+            .checkbox-group { 
+                grid-template-columns: 1fr; 
+                gap: 10px;
+            }
+            .number-input { 
+                height: 50px; 
+                font-size: 18px;
+                width: 100%;
+                padding: 15px;
+            }
+            button {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+                margin: 10px 0;
+            }
+            .visualization-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .result-image {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .metrics-panel {
+                font-size: 12px;
+            }
+            .metric-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 10px;
+            }
+            select {
+                width: 100%;
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .panel {
+                padding: 10px;
+            }
+            .number-input {
+                height: 44px;
+                font-size: 16px;
+            }
+            button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔢 Visualización de Números Primos</h1>
+    
+    <div class="container">
+        <div class="panel">
+            <h3>⚙️ Configuración</h3>
+            
+            <div class="form-group">
+                <label>Círculos Concéntricos (1-10,000):</label>
+                <input type="number" id="num_circulos" min="1" max="10000" value="15" class="number-input">
+            </div>
+            
+            <div class="form-group">
+                <label>Divisiones por Círculo (2-1,300):</label>
+                <input type="number" id="divisiones_por_circulo" min="2" max="1300" value="36" class="number-input">
+            </div>
+            
+            <div class="form-group">
+                <label>Tipo de Mapeo:</label>
+                <select id="tipo_mapeo">
+                    <option value="lineal">Lineal</option>
+                    <option value="logaritmico">Logarítmico</option>
+                    <option value="arquimedes">Espiral Arquímedes</option>
+                    <option value="fibonacci">Espiral Fibonacci</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Esquema de Color:</label>
+                <select id="esquema_color">
+                    <option value="clasico">Clásico</option>
+                    <option value="plasma">Plasma</option>
+                    <option value="naturaleza">Naturaleza</option>
+                    <option value="neon">Neón</option>
+                    <option value="oceanico">Oceánico</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Calidad de Renderizado:</label>
+                <select id="calidad_renderizado">
+                    <option value="media">Media (400 DPI)</option>
+                    <option value="alta" selected>Alta (600 DPI)</option>
+                    <option value="ultra">Ultra (800 DPI)</option>
+                    <option value="extremo">Extremo (1200 DPI)</option>
+                </select>
+                <small style="color: #666; font-size: 12px; margin-top: 5px; display: block;">
+                    💡 Extremo: Optimizado para zoom 500x+
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <label>Tipos de Primos a Mostrar:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mostrar_primos_gemelos" checked>
+                        <label>🔗 Gemelos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mostrar_primos_regulares" checked>
+                        <label>⭕ Regulares</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mostrar_sophie_germain">
+                        <label>👑 Sophie Germain</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mostrar_mersenne">
+                        <label>⭐ Mersenne</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="generar" class="generate-btn" onclick="generateVisualization()">
+                🚀 Generar Visualización
+            </button>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                Generando visualización...
+            </div>
+            
+            <div id="error" class="error"></div>
+            
+            <div id="metrics" class="metrics" style="display: none;">
+                <h3>📊 Métricas</h3>
+                <div id="metrics_content"></div>
+            </div>
+        </div>
+        
+        <div class="panel">
+            <h3>🎨 Visualización</h3>
+            <div id="visualization_container" class="visualization-container">
+                <p style="color: #718096; font-size: 1.2rem;">
+                    Configure los parámetros y presione "Generar Visualización"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('🚀 JavaScript iniciando...');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ DOM cargado, configurando app...');
+            setupInputs();
+            setupEventListeners();
+            console.log('✅ App configurada correctamente');
+        });
+
+        function setupInputs() {
+            console.log('🔧 Configurando validación de inputs...');
+            
+            const circunosInput = document.getElementById('num_circulos');
+            const divisionesInput = document.getElementById('divisiones_por_circulo');
+            
+            if (circunosInput) {
+                circunosInput.addEventListener('input', function() {
+                    if (this.value < 1) this.value = 1;
+                    if (this.value > 10000) this.value = 10000;
+                    console.log('Círculos:', this.value);
+                });
+            }
+            
+            if (divisionesInput) {
+                divisionesInput.addEventListener('input', function() {
+                    if (this.value < 2) this.value = 2;
+                    if (this.value > 1300) this.value = 1300;
+                    console.log('Divisiones:', this.value);
+                });
+            }
+        }
+
+        function setupEventListeners() {
+            console.log('🔧 Configurando event listeners...');
+            
+            const generateBtn = document.getElementById('generar');
+            if (generateBtn) {
+                generateBtn.addEventListener('click', function() {
+                    console.log('🎯 Botón clickeado!');
+                    generateVisualization();
+                });
+                generateBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    generateVisualization();
+                }, { passive: false });
+                console.log('✅ Event listener del botón configurado');
+            } else {
+                console.error('❌ No se encontró el botón generar');
+            }
+            
+            // Prevenir zoom en móviles al hacer doble tap
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(e) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    e.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, { passive: false });
+        }
+
+        async function generateVisualization() {
+            console.log('🚀 Iniciando generación de visualización...');
+            showLoading(true);
+            hideError();
+
+            try {
+                const requestData = {
+                    num_circulos: parseInt(document.getElementById('num_circulos').value) || 15,
+                    divisiones_por_circulo: parseInt(document.getElementById('divisiones_por_circulo').value) || 36,
+                    mostrar_primos_gemelos: document.getElementById('mostrar_primos_gemelos').checked,
+                    mostrar_primos_regulares: document.getElementById('mostrar_primos_regulares').checked,
+                    mostrar_sophie_germain: document.getElementById('mostrar_sophie_germain').checked,
+                    mostrar_mersenne: document.getElementById('mostrar_mersenne').checked,
+                    tipo_mapeo: document.getElementById('tipo_mapeo').value,
+                    esquema_color: document.getElementById('esquema_color').value,
+                    calidad_renderizado: document.getElementById('calidad_renderizado').value,
+                    comprimir_salida: false,
+                    usar_cache: true
+                };
+
+                console.log('📤 Enviando request:', requestData);
+
+                const response = await fetch('/generar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error del servidor: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('📥 Respuesta recibida. Tiene imagen:', !!data.imagen);
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                displayResults(data);
+
+            } catch (error) {
+                console.error('❌ Error completo:', error);
+                showError(`Error: ${error.message}`);
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function displayResults(data) {
+            console.log('🎨 Mostrando resultados...');
+            
+            if (data.imagen) {
+                console.log('✅ Imagen presente, primeros caracteres:', data.imagen.substring(0, 20));
+                
+                const imgSrc = `data:image/png;base64,${data.imagen}`;
+                
+                const container = document.getElementById('visualization_container');
+                container.innerHTML = `
+                    <img src="${imgSrc}" 
+                         class="result-image" 
+                         onload="console.log('✅ Imagen cargada exitosamente'); this.style.opacity='1';"
+                         onerror="console.error('❌ Error cargando imagen')"
+                         style="opacity: 0; transition: opacity 0.3s ease;"
+                         title="Visualización de ${data.metricas ? data.metricas.total_primos : 'varios'} números primos"
+                         alt="Visualización de números primos">
+                `;
+                
+                // Scroll suave hacia la imagen en móvil
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        container.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 300);
+                }
+
+                if (data.metricas) {
+                    showMetrics(data.metricas);
+                }
+            } else {
+                console.error('❌ No se recibió imagen en la respuesta');
+                showError('No se recibió imagen del servidor');
+            }
+        }
+
+        function showMetrics(metricas) {
+            const metricsContent = document.getElementById('metrics_content');
+            if (metricsContent) {
+                metricsContent.innerHTML = `
+                    <div class="metric-item">
+                        <span>Total Primos:</span>
+                        <span class="metric-value">${metricas.total_primos.toLocaleString()}</span>
+                    </div>
+                    <div class="metric-item">
+                        <span>Primo Máximo:</span>
+                        <span class="metric-value">${metricas.primo_maximo.toLocaleString()}</span>
+                    </div>
+                    <div class="metric-item">
+                        <span>Gap Promedio:</span>
+                        <span class="metric-value">${metricas.gap_promedio.toFixed(2)}</span>
+                    </div>
+                    <div class="metric-item">
+                        <span>Densidad:</span>
+                        <span class="metric-value">${(metricas.densidad_real * 100).toFixed(2)}%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span>Sophie Germain:</span>
+                        <span class="metric-value">${metricas.primos_sophie_germain}</span>
+                    </div>
+                `;
+                document.getElementById('metrics').style.display = 'block';
+            }
+        }
+
+        function showLoading(show) {
+            const loadingDiv = document.getElementById('loading');
+            const generateBtn = document.getElementById('generar');
+            
+            if (loadingDiv) {
+                loadingDiv.classList.toggle('show', show);
+            }
+            if (generateBtn) {
+                generateBtn.disabled = show;
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            if (errorDiv) {
+                errorDiv.innerHTML = `❌ ${message}`;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function hideError() {
+            const errorDiv = document.getElementById('error');
+            if (errorDiv) {
+                errorDiv.style.display = 'none';
+            }
+        }
+        
+        // Debug: verificar que el botón existe al cargar
+        window.onload = function() {
+            const btn = document.getElementById('generar');
+            console.log('🔍 Verificación botón:', btn ? '✅ Existe' : '❌ No existe');
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+ * Tip: There are .env files present. Install python-dotenv to use them.
+🚀 Iniciando aplicación con configuración .blackbox...
+📋 Puerto: 5001
+📋 Host: 127.0.0.1
+📋 Debug: False
+📋 SSL: ✓
+📋 Cache: ✓
+📋 IA: ✗
+ * Serving Flask app 'app_optimized'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5001
+Press CTRL+C to quit
+127.0.0.1 - - [21/Oct/2025 05:16:19] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2025 05:16:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:17:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:17:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:18:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:18:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:19:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:19:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:20:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:20:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:21:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:21:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:22:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:22:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:23:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:23:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:24:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:24:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:25:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:25:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:26:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:26:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:27:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:27:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:28:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:28:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:29:10] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:29:33] "POST /generar HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:29:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:30:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:30:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:31:08] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:31:33] "POST /generar HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:31:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:32:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:32:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:33:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:33:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:34:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:34:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:35:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:35:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:36:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:36:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:37:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:37:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:38:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:38:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:39:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:39:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:40:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:40:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:41:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:41:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:42:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:42:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:43:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:43:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:44:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:44:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:45:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:45:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:46:03] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:46:33] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 05:46:48] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:03:37] "GET /index_enhanced.html HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:03:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:03:40] "POST /generar HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:03:49] "POST /generar HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:04:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:05:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:06:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:07:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:08:13] "HEAD /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2025 06:08:17] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2025 06:08:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:09:37] "GET /api/info HTTP/1.0" 200 -
+127.0.0.1 - - [21/Oct/2025 06:10:37] "GET /api/info HTTP/1.0" 200 -

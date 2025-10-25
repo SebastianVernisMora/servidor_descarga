@@ -1,0 +1,345 @@
+{
+  "elementos": [
+    {
+      "numero": 2,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 0,
+      "segmento": 4,
+      "posicion": {
+        "radio": 0.1,
+        "angulo": -0.17453292519943298
+      }
+    },
+    {
+      "numero": 3,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 0,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.1,
+        "angulo": 3.6651914291880914
+      }
+    },
+    {
+      "numero": 5,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 1,
+      "segmento": 1,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": -1.2217304763960306
+      }
+    },
+    {
+      "numero": 7,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 1,
+      "segmento": 5,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": 0.17453292519943298
+      }
+    },
+    {
+      "numero": 11,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 1,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": 3.316125578789226
+      }
+    },
+    {
+      "numero": 13,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 1,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.3,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 17,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 9,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 1.5707963267948966
+      }
+    },
+    {
+      "numero": 19,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 2.9670597283903604
+      }
+    },
+    {
+      "numero": 23,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 2,
+      "segmento": 3,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": -0.5235987755982989
+      }
+    },
+    {
+      "numero": 29,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 16,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": 4.014257279586958
+      }
+    },
+    {
+      "numero": 31,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 2,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.5,
+        "angulo": -0.8726646259971648
+      }
+    },
+    {
+      "numero": 37,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 3.6651914291880914
+      }
+    },
+    {
+      "numero": 41,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 3,
+      "segmento": 6,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 0.5235987755982987
+      }
+    },
+    {
+      "numero": 43,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 3,
+      "segmento": 10,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 1.9198621771937625
+      }
+    },
+    {
+      "numero": 47,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": -1.5707963267948966
+      }
+    },
+    {
+      "numero": 53,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 3,
+      "segmento": 13,
+      "posicion": {
+        "radio": 0.7,
+        "angulo": 2.9670597283903604
+      }
+    },
+    {
+      "numero": 59,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 8,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 1.2217304763960306
+      }
+    },
+    {
+      "numero": 61,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 12,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 2.617993877991494
+      }
+    },
+    {
+      "numero": 67,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 7,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 0.8726646259971647
+      }
+    },
+    {
+      "numero": 71,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 15,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 3.6651914291880914
+      }
+    },
+    {
+      "numero": 73,
+      "es_primo": true,
+      "tipos": [
+        "gemelo"
+      ],
+      "circulo": 4,
+      "segmento": 2,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": -0.8726646259971648
+      }
+    },
+    {
+      "numero": 79,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 14,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 3.316125578789226
+      }
+    },
+    {
+      "numero": 83,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 5,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": 0.17453292519943298
+      }
+    },
+    {
+      "numero": 89,
+      "es_primo": true,
+      "tipos": [
+        "regular"
+      ],
+      "circulo": 4,
+      "segmento": 0,
+      "posicion": {
+        "radio": 0.9,
+        "angulo": -1.5707963267948966
+      }
+    }
+  ],
+  "estadisticas": {
+    "total_numeros": 90,
+    "total_primos": 24,
+    "densidad_primos": 26.666666666666668,
+    "patrones": {
+      "gemelos": 15,
+      "primos": 15,
+      "sexy": 21,
+      "sophie_germain": 7,
+      "palindromicos": 1,
+      "mersenne": 3,
+      "fermat": 3
+    },
+    "configuracion": {
+      "circulos": 5,
+      "segmentos": 18,
+      "mapeo": "fibonacci"
+    }
+  },
+  "parametros": {
+    "num_circulos": 5,
+    "divisiones_por_circulo": 18,
+    "tipo_mapeo": "fibonacci",
+    "filtros": {
+      "gemelos": true,
+      "compuestos": false
+    }
+  },
+  "timestamp": "2025-10-23T20:03:36.453253"
+}

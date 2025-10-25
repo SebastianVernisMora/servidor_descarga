@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Números Primos v3.0 - Acceso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; color: white; display: flex;
+            align-items: center; justify-content: center;
+        }
+        
+        .redirect-container {
+            text-align: center; background: rgba(255,255,255,0.95);
+            color: #333; padding: 40px; border-radius: 20px;
+            backdrop-filter: blur(10px); box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .logo { font-size: 3rem; color: #667eea; margin-bottom: 20px; }
+        h1 { margin-bottom: 15px; }
+        p { margin-bottom: 25px; color: #666; }
+        
+        .spinner {
+            display: inline-block; width: 20px; height: 20px; margin-right: 10px;
+            border: 3px solid #f3f3f3; border-top: 3px solid #667eea;
+            border-radius: 50%; animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="logo"><i class="fas fa-infinity"></i></div>
+        <h1>Sistema de Visualización de Números Primos</h1>
+        <p>Redirigiendo al sistema de acceso...</p>
+        <div style="font-size: 1.2rem;">
+            <div class="spinner"></div>
+            Cargando sistema protegido
+        </div>
+    </div>
+
+    <script>
+        // Redirigir automáticamente al login
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 2000);
+    </script>
+</body>
+</html>

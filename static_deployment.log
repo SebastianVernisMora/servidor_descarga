@@ -1,0 +1,40 @@
+ * Tip: There are .env files present. Install python-dotenv to use them.
+🚀 Iniciando servidor de mapas ESTÁTICOS pre-generados...
+============================================================
+✅ Índice cargado: 980 mapas disponibles
+📊 980 mapas pre-generados listos para servir
+💾 Tamaño total: 67661KB
+⚡ Rendimiento: MÁXIMO (sin cálculos en tiempo real)
+
+🌐 URLs disponibles:
+   📱 Selector de Mapas:  http://localhost:3000/
+   🎯 API Mapas:          POST http://localhost:3000/api/interactive-map
+   📊 Lista Mapas:        GET http://localhost:3000/api/maps
+   🎲 Mapa Aleatorio:     GET http://localhost:3000/api/random-map
+   📈 Info Sistema:       GET http://localhost:3000/api/info
+
+🔥 SERVIDOR ESTÁTICO INICIANDO EN PUERTO PÚBLICO 3000...
+ * Serving Flask app 'static_app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://172.31.7.132:3000
+Press CTRL+C to quit
+127.0.0.1 - - [23/Oct/2025 20:18:32] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:33] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:35] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:36] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:37] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:38] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:39] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:40] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:41] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:42] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/maps HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:43] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/random-map HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/number/97 HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:19:01] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2025 20:19:20] "GET /api/info HTTP/1.1" 200 -
