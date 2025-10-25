@@ -980,8 +980,8 @@ def generar_visualizacion_completa(
 
 @app.route('/')
 def index():
-    """Página principal - redirige al mapa interactivo avanzado."""
-    return send_from_directory('.', 'index_prime_map.html')
+    """Página principal - interfaz dinámica con selector de parámetros."""
+    return send_from_directory('.', 'index_dynamic.html')
 
 @app.route('/login.html')
 def login():
