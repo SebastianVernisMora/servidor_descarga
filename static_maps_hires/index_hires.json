@@ -1,0 +1,932 @@
+{
+  "metadata": {
+    "generated": "2025-10-25T00:59:24.829945",
+    "total_maps": 61,
+    "criteria": ">360 segmentos AND >1,000 c\u00edrculos",
+    "file_type": "high_resolution_index",
+    "version": "1.0"
+  },
+  "summary": {
+    "total_elements": 1085098,
+    "total_primos": 4858754,
+    "total_size_mb": 253.08,
+    "avg_generation_time": 9.535449770491802
+  },
+  "maps": {
+    "6e60ff5d5119": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_6e60ff5d5119.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.36,
+      "generation_time": 14.41755,
+      "generated": "2025-10-25T00:54:42.304711"
+    },
+    "e13cd6b30dd3": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_e13cd6b30dd3.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.52,
+      "generation_time": 12.309748,
+      "generated": "2025-10-25T00:53:50.434546"
+    },
+    "fddf97637f37": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_fddf97637f37.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.54,
+      "generation_time": 10.731192,
+      "generated": "2025-10-25T00:52:45.537661"
+    },
+    "e763a0b7eb79": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_e763a0b7eb79.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.68,
+      "generation_time": 8.165148,
+      "generated": "2025-10-25T00:50:09.054203"
+    },
+    "a9ee5f657efa": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_a9ee5f657efa.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.57,
+      "generation_time": 11.533892,
+      "generated": "2025-10-25T00:52:02.261776"
+    },
+    "e4bc66b1e712": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_e4bc66b1e712.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.53,
+      "generation_time": 11.385288,
+      "generated": "2025-10-25T00:51:29.455303"
+    },
+    "ef9d99b2a545": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_ef9d99b2a545.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.52,
+      "generation_time": 14.010567,
+      "generated": "2025-10-25T00:55:26.141923"
+    },
+    "b8c0c21f3770": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 400000
+      },
+      "json_file": "hires_b8c0c21f3770.json",
+      "elementos_count": 16900,
+      "primos_count": 33860,
+      "densidad": 8.465,
+      "file_size_mb": 3.9,
+      "generation_time": 4.455075,
+      "generated": "2025-10-25T00:48:06.315216"
+    },
+    "aab71462c624": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_aab71462c624.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.7,
+      "generation_time": 7.459849,
+      "generated": "2025-10-25T00:50:48.027757"
+    },
+    "aa28ed3f95bc": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 900000
+      },
+      "json_file": "hires_aa28ed3f95bc.json",
+      "elementos_count": 11839,
+      "primos_count": 71274,
+      "densidad": 7.919333333333334,
+      "file_size_mb": 2.81,
+      "generation_time": 6.517584,
+      "generated": "2025-10-25T00:51:06.446172"
+    },
+    "c75f0465e567": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_c75f0465e567.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.68,
+      "generation_time": 7.837797,
+      "generated": "2025-10-25T00:50:17.120008"
+    },
+    "9f8316a58a99": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_9f8316a58a99.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.37,
+      "generation_time": 9.159214,
+      "generated": "2025-10-25T00:56:55.389545"
+    },
+    "c615cd01a04f": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1200,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_c615cd01a04f.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.33,
+      "generation_time": 12.883331,
+      "generated": "2025-10-25T00:53:11.026075"
+    },
+    "f59d3304cc04": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_f59d3304cc04.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.64,
+      "generation_time": 12.754901,
+      "generated": "2025-10-25T00:49:05.319033"
+    },
+    "be479c0522da": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 750000
+      },
+      "json_file": "hires_be479c0522da.json",
+      "elementos_count": 10011,
+      "primos_count": 60238,
+      "densidad": 8.031733333333333,
+      "file_size_mb": 2.39,
+      "generation_time": 4.985098,
+      "generated": "2025-10-25T00:49:49.014946"
+    },
+    "dc15539d447b": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 500000
+      },
+      "json_file": "hires_dc15539d447b.json",
+      "elementos_count": 10386,
+      "primos_count": 41538,
+      "densidad": 8.307599999999999,
+      "file_size_mb": 2.4,
+      "generation_time": 3.780418,
+      "generated": "2025-10-25T00:48:28.373174"
+    },
+    "5147ebf91020": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1300,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1300000
+      },
+      "json_file": "hires_5147ebf91020.json",
+      "elementos_count": 8290,
+      "primos_count": 100021,
+      "densidad": 7.6939230769230775,
+      "file_size_mb": 1.92,
+      "generation_time": 5.463028,
+      "generated": "2025-10-25T00:56:29.040989"
+    },
+    "f3452e16d08e": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_f3452e16d08e.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.53,
+      "generation_time": 10.139854,
+      "generated": "2025-10-25T00:51:39.857350"
+    },
+    "78359a7d2295": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 900000
+      },
+      "json_file": "hires_78359a7d2295.json",
+      "elementos_count": 11839,
+      "primos_count": 71274,
+      "densidad": 7.919333333333334,
+      "file_size_mb": 2.81,
+      "generation_time": 5.616761,
+      "generated": "2025-10-25T00:50:53.858012"
+    },
+    "f59f17d0f425": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_f59f17d0f425.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.54,
+      "generation_time": 9.906085,
+      "generated": "2025-10-25T00:52:34.542687"
+    },
+    "a248eaf1ade8": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1300,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1300000
+      },
+      "json_file": "hires_a248eaf1ade8.json",
+      "elementos_count": 8290,
+      "primos_count": 100021,
+      "densidad": 7.6939230769230775,
+      "file_size_mb": 1.92,
+      "generation_time": 5.000236,
+      "generated": "2025-10-25T00:56:18.161635"
+    },
+    "2969c0392fa2": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_2969c0392fa2.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.38,
+      "generation_time": 8.168092,
+      "generated": "2025-10-25T00:56:46.009278"
+    },
+    "4104194d8b91": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_4104194d8b91.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.51,
+      "generation_time": 13.679667,
+      "generated": "2025-10-25T00:53:37.700961"
+    },
+    "e98bca8341cf": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_e98bca8341cf.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.52,
+      "generation_time": 14.738008,
+      "generated": "2025-10-25T00:55:11.787741"
+    },
+    "15895a109b9e": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_15895a109b9e.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.68,
+      "generation_time": 7.347153,
+      "generated": "2025-10-25T00:50:24.683089"
+    },
+    "7b8ca25f283e": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1200,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_7b8ca25f283e.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.32,
+      "generation_time": 11.995392,
+      "generated": "2025-10-25T00:52:57.817061"
+    },
+    "3f2feb23b89b": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_3f2feb23b89b.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.27,
+      "generation_time": 8.259734,
+      "generated": "2025-10-25T00:57:14.691969"
+    },
+    "e1592bf2b2a1": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1250000
+      },
+      "json_file": "hires_e1592bf2b2a1.json",
+      "elementos_count": 24049,
+      "primos_count": 96469,
+      "densidad": 7.71752,
+      "file_size_mb": 5.53,
+      "generation_time": 15.638528,
+      "generated": "2025-10-25T00:55:42.097019"
+    },
+    "ac444f40371e": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_ac444f40371e.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.52,
+      "generation_time": 14.049035,
+      "generated": "2025-10-25T00:54:56.699675"
+    },
+    "2ad17ce67b7b": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_2ad17ce67b7b.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.38,
+      "generation_time": 8.269824,
+      "generated": "2025-10-25T00:57:40.333491"
+    },
+    "3b05e933ff40": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_3b05e933ff40.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.85,
+      "generation_time": 12.770794,
+      "generated": "2025-10-25T00:49:32.833289"
+    },
+    "0c864f68ba12": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 500000
+      },
+      "json_file": "hires_0c864f68ba12.json",
+      "elementos_count": 10386,
+      "primos_count": 41538,
+      "densidad": 8.307599999999999,
+      "file_size_mb": 2.4,
+      "generation_time": 3.9811,
+      "generated": "2025-10-25T00:48:20.522761"
+    },
+    "e578ecdbccc6": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 900000
+      },
+      "json_file": "hires_e578ecdbccc6.json",
+      "elementos_count": 11839,
+      "primos_count": 71274,
+      "densidad": 7.919333333333334,
+      "file_size_mb": 2.82,
+      "generation_time": 5.749419,
+      "generated": "2025-10-25T00:50:59.768297"
+    },
+    "9b4c23a1d91f": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_9b4c23a1d91f.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.64,
+      "generation_time": 11.434584,
+      "generated": "2025-10-25T00:48:39.951571"
+    },
+    "008a016d6e31": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1250000
+      },
+      "json_file": "hires_008a016d6e31.json",
+      "elementos_count": 24049,
+      "primos_count": 96469,
+      "densidad": 7.71752,
+      "file_size_mb": 5.54,
+      "generation_time": 15.016014,
+      "generated": "2025-10-25T00:55:57.488598"
+    },
+    "e48ea0a14206": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 500000
+      },
+      "json_file": "hires_e48ea0a14206.json",
+      "elementos_count": 10386,
+      "primos_count": 41538,
+      "densidad": 8.307599999999999,
+      "file_size_mb": 2.4,
+      "generation_time": 3.783412,
+      "generated": "2025-10-25T00:48:24.451417"
+    },
+    "b9ae7bfb6cf7": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_b9ae7bfb6cf7.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.38,
+      "generation_time": 8.930712,
+      "generated": "2025-10-25T00:57:49.465176"
+    },
+    "3237361310c5": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1250000
+      },
+      "json_file": "hires_3237361310c5.json",
+      "elementos_count": 24049,
+      "primos_count": 96469,
+      "densidad": 7.71752,
+      "file_size_mb": 5.53,
+      "generation_time": 15.025108,
+      "generated": "2025-10-25T00:56:12.841396"
+    },
+    "5bd75a5396b7": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_5bd75a5396b7.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.51,
+      "generation_time": 12.243626,
+      "generated": "2025-10-25T00:54:02.992005"
+    },
+    "35a4458240ec": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_35a4458240ec.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.37,
+      "generation_time": 8.490545,
+      "generated": "2025-10-25T00:56:37.645458"
+    },
+    "b1c10ab44350": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_b1c10ab44350.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.7,
+      "generation_time": 7.529117,
+      "generated": "2025-10-25T00:50:32.428807"
+    },
+    "39d5f396873d": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1200,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_39d5f396873d.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.33,
+      "generation_time": 12.373288,
+      "generated": "2025-10-25T00:53:23.713330"
+    },
+    "8def0f0c8d5c": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 400000
+      },
+      "json_file": "hires_8def0f0c8d5c.json",
+      "elementos_count": 16900,
+      "primos_count": 33860,
+      "densidad": 8.465,
+      "file_size_mb": 3.91,
+      "generation_time": 4.813143,
+      "generated": "2025-10-25T00:48:11.357996"
+    },
+    "01775a7a0b06": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_01775a7a0b06.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.83,
+      "generation_time": 14.058091,
+      "generated": "2025-10-25T00:49:19.702129"
+    },
+    "41e18c3ff084": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 800000
+      },
+      "json_file": "hires_41e18c3ff084.json",
+      "elementos_count": 15942,
+      "primos_count": 63951,
+      "densidad": 7.993875,
+      "file_size_mb": 3.71,
+      "generation_time": 7.681402,
+      "generated": "2025-10-25T00:50:40.352640"
+    },
+    "cc1a606a8c63": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_cc1a606a8c63.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.26,
+      "generation_time": 8.35525,
+      "generated": "2025-10-25T00:57:23.266717"
+    },
+    "2a8ac2f7ac50": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 750000
+      },
+      "json_file": "hires_2a8ac2f7ac50.json",
+      "elementos_count": 10011,
+      "primos_count": 60238,
+      "densidad": 8.031733333333333,
+      "file_size_mb": 2.4,
+      "generation_time": 6.04577,
+      "generated": "2025-10-25T00:49:55.212009"
+    },
+    "12fb6bd5b805": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 400000
+      },
+      "json_file": "hires_12fb6bd5b805.json",
+      "elementos_count": 16900,
+      "primos_count": 33860,
+      "densidad": 8.465,
+      "file_size_mb": 3.91,
+      "generation_time": 4.721375,
+      "generated": "2025-10-25T00:48:16.311861"
+    },
+    "febfcf9c01de": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 800,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1600000
+      },
+      "json_file": "hires_febfcf9c01de.json",
+      "elementos_count": 15109,
+      "primos_count": 121127,
+      "densidad": 7.570437500000001,
+      "file_size_mb": 3.5,
+      "generation_time": 9.086175,
+      "generated": "2025-10-25T00:57:58.760938"
+    },
+    "0d1fdc91402c": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_0d1fdc91402c.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.25,
+      "generation_time": 10.629944,
+      "generated": "2025-10-25T00:57:06.219976"
+    },
+    "9c0e3bea6682": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1300,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1300000
+      },
+      "json_file": "hires_9c0e3bea6682.json",
+      "elementos_count": 8290,
+      "primos_count": 100021,
+      "densidad": 7.6939230769230775,
+      "file_size_mb": 1.92,
+      "generation_time": 5.167004,
+      "generated": "2025-10-25T00:56:23.451863"
+    },
+    "eb63d19564b8": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_eb63d19564b8.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.55,
+      "generation_time": 10.300385,
+      "generated": "2025-10-25T00:51:50.428221"
+    },
+    "1c75f873a505": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_1c75f873a505.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.37,
+      "generation_time": 12.238557,
+      "generated": "2025-10-25T00:54:27.572281"
+    },
+    "b263a5dfadbb": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 1000,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_b263a5dfadbb.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.53,
+      "generation_time": 11.171925,
+      "generated": "2025-10-25T00:51:17.791231"
+    },
+    "8395398ada86": {
+      "parametros": {
+        "num_circulos": 1000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "logaritmico",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_8395398ada86.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.65,
+      "generation_time": 11.870334,
+      "generated": "2025-10-25T00:48:52.187947"
+    },
+    "e6ffbe3f5ea2": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 750000
+      },
+      "json_file": "hires_e6ffbe3f5ea2.json",
+      "elementos_count": 10011,
+      "primos_count": 60238,
+      "densidad": 8.031733333333333,
+      "file_size_mb": 2.39,
+      "generation_time": 5.361053,
+      "generated": "2025-10-25T00:50:00.732687"
+    },
+    "0d5ece7102b4": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 600,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1200000
+      },
+      "json_file": "hires_0d5ece7102b4.json",
+      "elementos_count": 23187,
+      "primos_count": 92938,
+      "densidad": 7.744833333333332,
+      "file_size_mb": 5.36,
+      "generation_time": 11.710498,
+      "generated": "2025-10-25T00:54:15.013633"
+    },
+    "7c096ef81785": {
+      "parametros": {
+        "num_circulos": 2500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_7c096ef81785.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.53,
+      "generation_time": 10.349819,
+      "generated": "2025-10-25T00:52:24.374775"
+    },
+    "9bf7cacbf021": {
+      "parametros": {
+        "num_circulos": 2000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 1000000
+      },
+      "json_file": "hires_9bf7cacbf021.json",
+      "elementos_count": 19617,
+      "primos_count": 78498,
+      "densidad": 7.8498,
+      "file_size_mb": 4.56,
+      "generation_time": 11.21727,
+      "generated": "2025-10-25T00:52:13.759884"
+    },
+    "ba6b3357cf9c": {
+      "parametros": {
+        "num_circulos": 1500,
+        "divisiones_por_circulo": 400,
+        "tipo_mapeo": "arquimedes",
+        "total_numeros": 600000
+      },
+      "json_file": "hires_ba6b3357cf9c.json",
+      "elementos_count": 24524,
+      "primos_count": 49098,
+      "densidad": 8.183,
+      "file_size_mb": 5.83,
+      "generation_time": 10.494958,
+      "generated": "2025-10-25T00:49:43.680229"
+    },
+    "4336a199fb81": {
+      "parametros": {
+        "num_circulos": 3000,
+        "divisiones_por_circulo": 500,
+        "tipo_mapeo": "lineal",
+        "total_numeros": 1500000
+      },
+      "json_file": "hires_4336a199fb81.json",
+      "elementos_count": 14219,
+      "primos_count": 114155,
+      "densidad": 7.610333333333333,
+      "file_size_mb": 3.38,
+      "generation_time": 8.403715,
+      "generated": "2025-10-25T00:57:31.866458"
+    }
+  }
+}

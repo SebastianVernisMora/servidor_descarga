@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas de Alta Resolución Pre-generados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+        }
+        .title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FFD700, #FF6B9D, #00FFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+        .criteria {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .summary-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .summary-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+        }
+        .maps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .map-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .map-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+        }
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .map-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FFD700;
+        }
+        .map-type {
+            background: rgba(102, 126, 234, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .map-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        .stat {
+            background: rgba(255,255,255,0.05);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .stat span {
+            font-size: 1rem;
+        }
+        .map-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        .download-btn {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #FF6B9D, #C44569);
+            color: white;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 1rem;
+            background: rgba(102, 126, 234, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            z-index: 1000;
+        }
+        .back-btn:hover {
+            background: rgba(118, 75, 162, 0.9);
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .maps-grid { grid-template-columns: 1fr; }
+            .summary-stats { grid-template-columns: repeat(2, 1fr); }
+            .title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='/'" title="Volver al inicio">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    
+    <div class="header">
+        <div class="title">🏆 Mapas de Alta Resolución</div>
+        <div class="subtitle">Números Primos Pre-generados</div>
+        <div class="criteria">
+            <i class="fas fa-trophy"></i>
+            Criterio: &gt;360 segmentos Y &gt;1,000 círculos
+        </div>
+    </div>
+    
+    <div class="summary-stats">
+        <div class="summary-stat">
+            <div class="summary-number">61</div>
+            <div>Mapas Generados</div>
+        </div>
+        <div class="summary-stat">
+            <div class="summary-number">1,085,098</div>
+            <div>Elementos Totales</div>
+        </div>
+        <div class="summary-stat">
+            <div class="summary-number">4,858,754</div>
+            <div>Primos Totales</div>
+        </div>
+        <div class="summary-stat">
+            <div class="summary-number">253MB</div>
+            <div>Tamaño Total</div>
+        </div>
+    </div>
+    
+    <div class="maps-grid">
+        
+    <div class="map-card" data-hash="b8c0c21f3770">
+        <div class="map-header">
+            <div class="map-title">1,000×400</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 16,900 elementos</div>
+            <div class="stat"><span>🔢</span> 33,860 primos</div>
+            <div class="stat"><span>📈</span> 8.46% densidad</div>
+            <div class="stat"><span>💾</span> 3.9MB</div>
+            <div class="stat"><span>📐</span> 400,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('b8c0c21f3770')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="8def0f0c8d5c">
+        <div class="map-header">
+            <div class="map-title">1,000×400</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 16,900 elementos</div>
+            <div class="stat"><span>🔢</span> 33,860 primos</div>
+            <div class="stat"><span>📈</span> 8.46% densidad</div>
+            <div class="stat"><span>💾</span> 3.9MB</div>
+            <div class="stat"><span>📐</span> 400,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('8def0f0c8d5c')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="12fb6bd5b805">
+        <div class="map-header">
+            <div class="map-title">1,000×400</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 16,900 elementos</div>
+            <div class="stat"><span>🔢</span> 33,860 primos</div>
+            <div class="stat"><span>📈</span> 8.46% densidad</div>
+            <div class="stat"><span>💾</span> 3.9MB</div>
+            <div class="stat"><span>📐</span> 400,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('12fb6bd5b805')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="dc15539d447b">
+        <div class="map-header">
+            <div class="map-title">1,000×500</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,386 elementos</div>
+            <div class="stat"><span>🔢</span> 41,538 primos</div>
+            <div class="stat"><span>📈</span> 8.31% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('dc15539d447b')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="0c864f68ba12">
+        <div class="map-header">
+            <div class="map-title">1,000×500</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,386 elementos</div>
+            <div class="stat"><span>🔢</span> 41,538 primos</div>
+            <div class="stat"><span>📈</span> 8.31% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('0c864f68ba12')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e48ea0a14206">
+        <div class="map-header">
+            <div class="map-title">1,000×500</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,386 elementos</div>
+            <div class="stat"><span>🔢</span> 41,538 primos</div>
+            <div class="stat"><span>📈</span> 8.31% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e48ea0a14206')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="f59d3304cc04">
+        <div class="map-header">
+            <div class="map-title">1,000×600</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.6MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('f59d3304cc04')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.6MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="3b05e933ff40">
+        <div class="map-header">
+            <div class="map-title">1,500×400</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.8MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('3b05e933ff40')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="9b4c23a1d91f">
+        <div class="map-header">
+            <div class="map-title">1,000×600</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.6MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('9b4c23a1d91f')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.6MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="01775a7a0b06">
+        <div class="map-header">
+            <div class="map-title">1,500×400</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.8MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('01775a7a0b06')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="8395398ada86">
+        <div class="map-header">
+            <div class="map-title">1,000×600</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.7MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('8395398ada86')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="ba6b3357cf9c">
+        <div class="map-header">
+            <div class="map-title">1,500×400</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,524 elementos</div>
+            <div class="stat"><span>🔢</span> 49,098 primos</div>
+            <div class="stat"><span>📈</span> 8.18% densidad</div>
+            <div class="stat"><span>💾</span> 5.8MB</div>
+            <div class="stat"><span>📐</span> 600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('ba6b3357cf9c')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="be479c0522da">
+        <div class="map-header">
+            <div class="map-title">1,500×500</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,011 elementos</div>
+            <div class="stat"><span>🔢</span> 60,238 primos</div>
+            <div class="stat"><span>📈</span> 8.03% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 750,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('be479c0522da')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="2a8ac2f7ac50">
+        <div class="map-header">
+            <div class="map-title">1,500×500</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,011 elementos</div>
+            <div class="stat"><span>🔢</span> 60,238 primos</div>
+            <div class="stat"><span>📈</span> 8.03% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 750,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('2a8ac2f7ac50')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e6ffbe3f5ea2">
+        <div class="map-header">
+            <div class="map-title">1,500×500</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 10,011 elementos</div>
+            <div class="stat"><span>🔢</span> 60,238 primos</div>
+            <div class="stat"><span>📈</span> 8.03% densidad</div>
+            <div class="stat"><span>💾</span> 2.4MB</div>
+            <div class="stat"><span>📐</span> 750,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e6ffbe3f5ea2')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e763a0b7eb79">
+        <div class="map-header">
+            <div class="map-title">1,000×800</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e763a0b7eb79')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="aab71462c624">
+        <div class="map-header">
+            <div class="map-title">2,000×400</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('aab71462c624')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="c75f0465e567">
+        <div class="map-header">
+            <div class="map-title">1,000×800</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('c75f0465e567')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="15895a109b9e">
+        <div class="map-header">
+            <div class="map-title">1,000×800</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('15895a109b9e')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="b1c10ab44350">
+        <div class="map-header">
+            <div class="map-title">2,000×400</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('b1c10ab44350')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="41e18c3ff084">
+        <div class="map-header">
+            <div class="map-title">2,000×400</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,942 elementos</div>
+            <div class="stat"><span>🔢</span> 63,951 primos</div>
+            <div class="stat"><span>📈</span> 7.99% densidad</div>
+            <div class="stat"><span>💾</span> 3.7MB</div>
+            <div class="stat"><span>📐</span> 800,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('41e18c3ff084')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.7MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="aa28ed3f95bc">
+        <div class="map-header">
+            <div class="map-title">1,500×600</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 11,839 elementos</div>
+            <div class="stat"><span>🔢</span> 71,274 primos</div>
+            <div class="stat"><span>📈</span> 7.92% densidad</div>
+            <div class="stat"><span>💾</span> 2.8MB</div>
+            <div class="stat"><span>📐</span> 900,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('aa28ed3f95bc')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="78359a7d2295">
+        <div class="map-header">
+            <div class="map-title">1,500×600</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 11,839 elementos</div>
+            <div class="stat"><span>🔢</span> 71,274 primos</div>
+            <div class="stat"><span>📈</span> 7.92% densidad</div>
+            <div class="stat"><span>💾</span> 2.8MB</div>
+            <div class="stat"><span>📐</span> 900,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('78359a7d2295')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e578ecdbccc6">
+        <div class="map-header">
+            <div class="map-title">1,500×600</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 11,839 elementos</div>
+            <div class="stat"><span>🔢</span> 71,274 primos</div>
+            <div class="stat"><span>📈</span> 7.92% densidad</div>
+            <div class="stat"><span>💾</span> 2.8MB</div>
+            <div class="stat"><span>📐</span> 900,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e578ecdbccc6')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (2.8MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="fddf97637f37">
+        <div class="map-header">
+            <div class="map-title">2,500×400</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('fddf97637f37')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="a9ee5f657efa">
+        <div class="map-header">
+            <div class="map-title">2,000×500</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.6MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('a9ee5f657efa')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.6MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e4bc66b1e712">
+        <div class="map-header">
+            <div class="map-title">1,000×1,000</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e4bc66b1e712')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="f3452e16d08e">
+        <div class="map-header">
+            <div class="map-title">1,000×1,000</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('f3452e16d08e')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="f59f17d0f425">
+        <div class="map-header">
+            <div class="map-title">2,500×400</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('f59f17d0f425')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="eb63d19564b8">
+        <div class="map-header">
+            <div class="map-title">2,000×500</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('eb63d19564b8')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="b263a5dfadbb">
+        <div class="map-header">
+            <div class="map-title">1,000×1,000</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('b263a5dfadbb')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="7c096ef81785">
+        <div class="map-header">
+            <div class="map-title">2,500×400</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.5MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('7c096ef81785')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="9bf7cacbf021">
+        <div class="map-header">
+            <div class="map-title">2,000×500</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 19,617 elementos</div>
+            <div class="stat"><span>🔢</span> 78,498 primos</div>
+            <div class="stat"><span>📈</span> 7.85% densidad</div>
+            <div class="stat"><span>💾</span> 4.6MB</div>
+            <div class="stat"><span>📐</span> 1,000,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('9bf7cacbf021')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (4.6MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="6e60ff5d5119">
+        <div class="map-header">
+            <div class="map-title">2,000×600</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.4MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('6e60ff5d5119')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e13cd6b30dd3">
+        <div class="map-header">
+            <div class="map-title">1,500×800</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e13cd6b30dd3')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="ef9d99b2a545">
+        <div class="map-header">
+            <div class="map-title">3,000×400</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('ef9d99b2a545')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="c615cd01a04f">
+        <div class="map-header">
+            <div class="map-title">1,000×1,200</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.3MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('c615cd01a04f')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.3MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="4104194d8b91">
+        <div class="map-header">
+            <div class="map-title">1,500×800</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('4104194d8b91')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e98bca8341cf">
+        <div class="map-header">
+            <div class="map-title">3,000×400</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e98bca8341cf')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="7b8ca25f283e">
+        <div class="map-header">
+            <div class="map-title">1,000×1,200</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.3MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('7b8ca25f283e')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.3MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="ac444f40371e">
+        <div class="map-header">
+            <div class="map-title">3,000×400</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('ac444f40371e')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="5bd75a5396b7">
+        <div class="map-header">
+            <div class="map-title">1,500×800</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('5bd75a5396b7')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="39d5f396873d">
+        <div class="map-header">
+            <div class="map-title">1,000×1,200</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.3MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('39d5f396873d')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.3MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="1c75f873a505">
+        <div class="map-header">
+            <div class="map-title">2,000×600</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.4MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('1c75f873a505')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="0d5ece7102b4">
+        <div class="map-header">
+            <div class="map-title">2,000×600</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 23,187 elementos</div>
+            <div class="stat"><span>🔢</span> 92,938 primos</div>
+            <div class="stat"><span>📈</span> 7.74% densidad</div>
+            <div class="stat"><span>💾</span> 5.4MB</div>
+            <div class="stat"><span>📐</span> 1,200,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('0d5ece7102b4')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="e1592bf2b2a1">
+        <div class="map-header">
+            <div class="map-title">2,500×500</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,049 elementos</div>
+            <div class="stat"><span>🔢</span> 96,469 primos</div>
+            <div class="stat"><span>📈</span> 7.72% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,250,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('e1592bf2b2a1')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="008a016d6e31">
+        <div class="map-header">
+            <div class="map-title">2,500×500</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,049 elementos</div>
+            <div class="stat"><span>🔢</span> 96,469 primos</div>
+            <div class="stat"><span>📈</span> 7.72% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,250,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('008a016d6e31')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="3237361310c5">
+        <div class="map-header">
+            <div class="map-title">2,500×500</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 24,049 elementos</div>
+            <div class="stat"><span>🔢</span> 96,469 primos</div>
+            <div class="stat"><span>📈</span> 7.72% densidad</div>
+            <div class="stat"><span>💾</span> 5.5MB</div>
+            <div class="stat"><span>📐</span> 1,250,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('3237361310c5')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (5.5MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="5147ebf91020">
+        <div class="map-header">
+            <div class="map-title">1,000×1,300</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 8,290 elementos</div>
+            <div class="stat"><span>🔢</span> 100,021 primos</div>
+            <div class="stat"><span>📈</span> 7.69% densidad</div>
+            <div class="stat"><span>💾</span> 1.9MB</div>
+            <div class="stat"><span>📐</span> 1,300,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('5147ebf91020')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (1.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="a248eaf1ade8">
+        <div class="map-header">
+            <div class="map-title">1,000×1,300</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 8,290 elementos</div>
+            <div class="stat"><span>🔢</span> 100,021 primos</div>
+            <div class="stat"><span>📈</span> 7.69% densidad</div>
+            <div class="stat"><span>💾</span> 1.9MB</div>
+            <div class="stat"><span>📐</span> 1,300,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('a248eaf1ade8')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (1.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="9c0e3bea6682">
+        <div class="map-header">
+            <div class="map-title">1,000×1,300</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 8,290 elementos</div>
+            <div class="stat"><span>🔢</span> 100,021 primos</div>
+            <div class="stat"><span>📈</span> 7.69% densidad</div>
+            <div class="stat"><span>💾</span> 1.9MB</div>
+            <div class="stat"><span>📐</span> 1,300,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('9c0e3bea6682')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (1.9MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="9f8316a58a99">
+        <div class="map-header">
+            <div class="map-title">1,500×1,000</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('9f8316a58a99')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="2969c0392fa2">
+        <div class="map-header">
+            <div class="map-title">1,500×1,000</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('2969c0392fa2')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="3f2feb23b89b">
+        <div class="map-header">
+            <div class="map-title">2,500×600</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.3MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('3f2feb23b89b')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.3MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="2ad17ce67b7b">
+        <div class="map-header">
+            <div class="map-title">3,000×500</div>
+            <div class="map-type">Logaritmico</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('2ad17ce67b7b')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="b9ae7bfb6cf7">
+        <div class="map-header">
+            <div class="map-title">3,000×500</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('b9ae7bfb6cf7')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="35a4458240ec">
+        <div class="map-header">
+            <div class="map-title">1,500×1,000</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('35a4458240ec')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="cc1a606a8c63">
+        <div class="map-header">
+            <div class="map-title">2,500×600</div>
+            <div class="map-type">Arquimedes</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.3MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('cc1a606a8c63')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.3MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="0d1fdc91402c">
+        <div class="map-header">
+            <div class="map-title">2,500×600</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.2MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('0d1fdc91402c')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.2MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="4336a199fb81">
+        <div class="map-header">
+            <div class="map-title">3,000×500</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 14,219 elementos</div>
+            <div class="stat"><span>🔢</span> 114,155 primos</div>
+            <div class="stat"><span>📈</span> 7.61% densidad</div>
+            <div class="stat"><span>💾</span> 3.4MB</div>
+            <div class="stat"><span>📐</span> 1,500,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('4336a199fb81')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.4MB)
+            </button>
+        </div>
+    </div>
+    <div class="map-card" data-hash="febfcf9c01de">
+        <div class="map-header">
+            <div class="map-title">2,000×800</div>
+            <div class="map-type">Lineal</div>
+        </div>
+        <div class="map-stats">
+            <div class="stat"><span>📊</span> 15,109 elementos</div>
+            <div class="stat"><span>🔢</span> 121,127 primos</div>
+            <div class="stat"><span>📈</span> 7.57% densidad</div>
+            <div class="stat"><span>💾</span> 3.5MB</div>
+            <div class="stat"><span>📐</span> 1,600,000 números</div>
+        </div>
+        <div class="map-actions">
+            <button onclick="downloadMap('febfcf9c01de')" class="download-btn">
+                <i class="fas fa-download"></i> Descargar JSON (3.5MB)
+            </button>
+        </div>
+    </div>
+    </div>
+    
+    <script>
+        function downloadMap(hash) {
+            const link = document.createElement('a');
+            link.href = `hires_${hash}.json`;
+            link.download = `hires_map_${hash}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            console.log(`📥 Descargando mapa: ${hash}`);
+        }
+        
+        console.log('📊 Mapas de alta resolución cargados:', 61);
+        console.log('🎯 Total elementos pre-generados:', 1,085,098);
+    </script>
+</body>
+</html>
