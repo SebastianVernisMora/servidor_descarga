@@ -1,5 +1,13 @@
 # CRUSH.md - Development Guide
 
+## Development Workflow Directives
+
+### IMPORTANT - Development Rules:
+- **NO SIDE EFFECTS**: Al realizar cualquier edición, NO se debe generar o cambiar ninguna otra parte del código
+- **ALWAYS COMMIT**: Siempre se debe realizar commit al finalizar el cambio solicitado
+- **BRANCH STRATEGY**: Se trabajará sobre la rama `dev`, SIN hacer PR jamás a la rama `main`
+- **DOCUMENTATION**: Se debe actualizar y organizar la documentación y los scripts después de utilizarse o actualizarse
+
 ## Build/Run Commands
 ```bash
 # Run Flask app (default port 3000) - MAPA INTERACTIVO AVANZADO
