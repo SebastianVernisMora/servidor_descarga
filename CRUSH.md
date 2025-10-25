@@ -37,7 +37,10 @@ curl -X POST http://localhost:3000/cache/clear
 
 # API Testing
 curl http://localhost:3000/api/number/97
-curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: application/json" -d '{"num_circulos": 10, "divisiones_por_circulo": 24}'
+curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: application/json" -d '{"num_circulos": 10000, "divisiones_por_circulo": 1300}'
+
+# Probar capacidad extrema (13M números)
+curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: application/json" -d '{"num_circulos": 10000, "divisiones_por_circulo": 1300}' --max-time 600
 ```
 
 ## Desplegar Aplicación ESTÁTICA (RENDIMIENTO MÁXIMO)
