@@ -3,6 +3,7 @@
 ## Documentación Principal
 - [README Principal](../README.md) - Información general del proyecto
 - [CRUSH - Guía de Desarrollo](../CRUSH.md) - Comandos y convenciones de desarrollo
+- [DIRECTIVAS DEL PROGRAMA](../PROGRAM_DIRECTIVES.md) - Directivas básicas y arquitectura
 
 ## Guías de Despliegue
 - [Guía de Despliegue](DEPLOYMENT_GUIDE.md) - Proceso completo de despliegue
