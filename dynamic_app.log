@@ -1,0 +1,52 @@
+ * Tip: There are .env files present. Install python-dotenv to use them.
+🚀 Iniciando aplicación ULTRA-OPTIMIZADA de visualización de primos v3.2...
+Cache: DISCO ✓ | IA: ✓ | Compresión: ✓ | Memoria: OPTIMIZADA ✓
+Directorio cache: cache_primes | Archivos máx: 30
+🎯 Nuevo endpoint: /api/interactive-map para mapas HTML responsivos
+Servidor iniciándose en puerto 3000...
+ * Serving Flask app 'app_optimized'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://192.168.0.69:3000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [25/Oct/2025 00:17:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:22] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:23] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:25] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:26] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:27] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:29] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:30] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:30] "GET /api/number/146 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:31] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:31] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:31] "GET /api/number/77 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:32] "GET /api/number/20 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:32] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:32] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:33] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:34] "GET /api/number/181 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:34] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:35] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:36] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:43] "GET /api/number/431 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:43] "GET /api/number/431 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:44] "GET /api/number/431 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:44] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:54] "GET /api/number/503 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:17:55] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:17:59] "GET /api/number/503 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:00] "GET /api/number/503 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:00] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:18:03] "GET /api/number/397 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:04] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:18:33] "GET /api/number/181 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:33] "GET /api/number/181 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:34] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:18:38] "POST /descargar-imagen HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:18:39] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:19:06] "GET /api/number/397 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:19:06] "GET /api/number/397 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:19:07] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -

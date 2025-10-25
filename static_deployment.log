@@ -1,40 +1,66 @@
  * Tip: There are .env files present. Install python-dotenv to use them.
-🚀 Iniciando servidor de mapas ESTÁTICOS pre-generados...
-============================================================
+🚀 Iniciando servidor MEJORADO con interfaz interactiva avanzada...
+======================================================================
 ✅ Índice cargado: 980 mapas disponibles
 📊 980 mapas pre-generados listos para servir
 💾 Tamaño total: 67661KB
-⚡ Rendimiento: MÁXIMO (sin cálculos en tiempo real)
+⚡ Rendimiento: MÁXIMO (mapas pre-calculados + interfaz responsiva)
 
 🌐 URLs disponibles:
-   📱 Selector de Mapas:  http://localhost:3000/
-   🎯 API Mapas:          POST http://localhost:3000/api/interactive-map
-   📊 Lista Mapas:        GET http://localhost:3000/api/maps
-   🎲 Mapa Aleatorio:     GET http://localhost:3000/api/random-map
-   📈 Info Sistema:       GET http://localhost:3000/api/info
+   🎮 Interfaz Interactiva:   http://localhost:3000/
+   🎯 API Mapas Dinámicos:    POST http://localhost:3000/api/interactive-map
+   📊 Lista de Mapas:         GET http://localhost:3000/api/maps
+   🎲 Mapa Aleatorio:         GET http://localhost:3000/api/random-map
+   📈 Info del Sistema:       GET http://localhost:3000/api/info
+   🧮 Análisis de Números:    GET http://localhost:3000/api/number/<n>
 
-🔥 SERVIDOR ESTÁTICO INICIANDO EN PUERTO PÚBLICO 3000...
+🎨 NUEVAS CARACTERÍSTICAS:
+   ✨ Tooltips matemáticos avanzados con análisis en tiempo real
+   🔍 Controles de zoom y navegación mejorados
+   📱 Diseño completamente responsive para móviles
+   🎯 8 tipos diferentes de primos con visualización especializada
+   ⚡ Carga instantánea usando mapas pre-generados
+   🌈 Animaciones y efectos visuales mejorados
+
+🔥 SERVIDOR INTERACTIVO MEJORADO INICIANDO EN PUERTO 3000...
  * Serving Flask app 'static_app'
  * Debug mode: off
-WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:3000
- * Running on http://172.31.7.132:3000
-Press CTRL+C to quit
-127.0.0.1 - - [23/Oct/2025 20:18:32] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:33] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:35] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:36] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:37] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:38] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:39] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:40] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:41] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:42] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/maps HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:43] "POST /api/interactive-map HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/random-map HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:18:43] "GET /api/number/97 HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:19:01] "GET /api/info HTTP/1.1" 200 -
-127.0.0.1 - - [23/Oct/2025 20:19:20] "GET /api/info HTTP/1.1" 200 -
+ * Running on http://192.168.0.69:3000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [25/Oct/2025 00:09:42] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:43] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:44] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:45] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:47] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:48] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:49] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:50] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:51] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:52] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:53] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:53] "GET /api/maps HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:53] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:53] "GET /api/random-map HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:09:53] "GET /api/number/97 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:10:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:10:11] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:10:47] "[33mGET /map_85212a2c8117.html HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:10:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:10:48] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:11:02] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [25/Oct/2025 00:11:03] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:11:06] "[33mGET /map_fb24099dd389.html HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:11:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:11:07] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:12:05] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [25/Oct/2025 00:12:06] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:12:10] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [25/Oct/2025 00:12:11] "[33mGET /service-worker.js HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:12:54] "[31m[1mGET /api/interactive-map HTTP/1.1[0m" 405 -
+127.0.0.1 - - [25/Oct/2025 00:12:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:13:20] "GET /enhanced HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 00:13:22] "[33mGET /map_11dadf3476bb.html HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2025 00:13:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
