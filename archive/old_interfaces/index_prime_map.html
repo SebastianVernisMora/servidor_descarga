@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo Avanzado de Números Primos</title>
+    
+    <!-- CSS Framework y Librerías -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #FFD700;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --bg-light: rgba(255, 255, 255, 0.95);
+            --bg-dark: rgba(0, 0, 0, 0.9);
+            --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 8px 40px rgba(0,0,0,0.3);
+            --transition-fast: all 0.2s ease;
+            --transition-smooth: all 0.3s ease;
+            --prime-regular: #4D96FF;
+            --prime-twin: #FF0000;
+            --prime-cousin: #FF8C00;
+            --prime-sexy: #FF1493;
+            --prime-sophie: #9400D3;
+            --prime-palindromic: #FFD700;
+            --prime-mersenne: #00FFFF;
+            --prime-fermat: #ADFF2F;
+            --composite: #404040;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        .app-header {
+            background: var(--bg-dark);
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-heavy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(15px);
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .app-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--accent-color), #FF6B9D, #00FFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .app-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #e2e8f0;
+        }
+        
+        .main-container {
+            display: flex;
+            min-height: calc(100vh - 140px);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        /* Panel de Control Mejorado */
+        .control-panel {
+            width: 350px;
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            overflow-y: auto;
+            flex-shrink: 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .control-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .form-input, .form-select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            background: white;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .range-container {
+            position: relative;
+            margin-top: 0.5rem;
+        }
+        
+        .range-value {
+            position: absolute;
+            right: 0;
+            top: -0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .checkbox-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+        }
+        
+        .checkbox-item.checked {
+            border-color: var(--primary-color);
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+        
+        .checkbox-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .prime-color-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .prime-color-indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+        }
+        
+        .generate-button {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .generate-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+        
+        .generate-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading-spinner {
+            display: none;
+        }
+        
+        .loading-spinner.active {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.75rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Panel de Visualización Mejorado */
+        .visualization-panel {
+            flex: 1;
+            background: var(--bg-light);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .visualization-header {
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .visualization-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .visualization-controls {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .control-button {
+            padding: 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .control-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+        
+        /* Mapa Interactivo Avanzado */
+        .interactive-map {
+            width: 100%;
+            height: calc(100vh - 280px);
+            position: relative;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow: hidden;
+            cursor: crosshair;
+        }
+        
+        .prime-map-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-origin: center center;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .prime-circle {
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border: 2px solid rgba(255,255,255,0.1);
+            z-index: 10;
+        }
+        
+        .prime-circle:hover {
+            transform: scale(2);
+            z-index: 100;
+            border-width: 3px;
+            filter: brightness(1.4) saturate(1.3);
+            box-shadow: 0 0 20px rgba(255,255,255,0.6);
+        }
+        
+        .prime-circle.composite {
+            background: var(--composite);
+            opacity: 0.4;
+            border-color: rgba(255,255,255,0.05);
+        }
+        
+        .prime-circle.regular {
+            background: var(--prime-regular);
+            box-shadow: 0 0 6px rgba(77, 150, 255, 0.4);
+        }
+        
+        .prime-circle.twin {
+            background: var(--prime-twin);
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+            animation: twin-glow 3s ease-in-out infinite;
+        }
+        
+        .prime-circle.cousin {
+            background: var(--prime-cousin);
+            box-shadow: 0 0 8px rgba(255, 140, 0, 0.5);
+        }
+        
+        .prime-circle.sexy {
+            background: var(--prime-sexy);
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+        }
+        
+        .prime-circle.sophie-germain {
+            background: var(--prime-sophie);
+            box-shadow: 0 0 12px rgba(148, 0, 211, 0.6);
+            animation: sophie-pulse 4s ease-in-out infinite;
+        }
+        
+        .prime-circle.palindromic {
+            background: var(--prime-palindromic);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            animation: palindrome-sparkle 2s ease-in-out infinite;
+        }
+        
+        .prime-circle.mersenne {
+            background: var(--prime-mersenne);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+            animation: mersenne-shine 2.5s ease-in-out infinite;
+        }
+        
+        .prime-circle.fermat {
+            background: var(--prime-fermat);
+            box-shadow: 0 0 18px rgba(173, 255, 47, 0.9);
+            animation: fermat-glow 3.5s ease-in-out infinite;
+        }
+        
+        .prime-circle.multiple-types {
+            background: linear-gradient(45deg, var(--prime-twin), var(--prime-mersenne), var(--prime-palindromic));
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+            animation: multi-rainbow 1.5s linear infinite;
+        }
+        
+        @keyframes twin-glow {
+            0%, 100% { box-shadow: 0 0 12px rgba(255, 0, 0, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+        }
+        
+        @keyframes sophie-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes palindrome-sparkle {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.5) saturate(1.5); }
+        }
+        
+        @keyframes mersenne-shine {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 1); }
+            50% { box-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.5); }
+        }
+        
+        @keyframes fermat-glow {
+            0%, 100% { box-shadow: 0 0 18px rgba(173, 255, 47, 0.9); }
+            50% { box-shadow: 0 0 25px rgba(173, 255, 47, 1); }
+        }
+        
+        @keyframes multi-rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        /* Tooltip Avanzado con Matemáticas */
+        .number-tooltip {
+            position: absolute;
+            background: var(--bg-dark);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0.8) translateY(10px);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            z-index: 1000;
+            min-width: 350px;
+            max-width: 500px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .number-tooltip.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        
+        .tooltip-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .tooltip-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .tooltip-type-badge {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tooltip-properties {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tooltip-section-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .tooltip-property {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .tooltip-property-icon {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        
+        .tooltip-mathematics {
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+            padding-top: 1.5rem;
+        }
+        
+        .tooltip-formula {
+            font-family: 'Courier New', Monaco, monospace;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid var(--accent-color);
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+        
+        .tooltip-explanation {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .tooltip-explanation-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tooltip-explanation-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+        
+        /* Panel de Estadísticas Avanzado */
+        .stats-panel {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--bg-dark);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 250px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .stats-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        
+        .stats-label {
+            color: #cbd5e0;
+        }
+        
+        .stats-value {
+            font-weight: 700;
+            color: var(--accent-color);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* Responsive Design Mejorado */
+        @media (max-width: 1200px) {
+            .main-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .control-panel {
+                width: 100%;
+                max-height: 50vh;
+                padding: 1.5rem;
+            }
+            
+            .interactive-map {
+                height: 50vh;
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .app-header {
+                padding: 1rem;
+            }
+            
+            .app-title {
+                font-size: 1.8rem;
+            }
+            
+            .number-tooltip {
+                min-width: 280px;
+                max-width: 90vw;
+                font-size: 0.9rem;
+            }
+            
+            .tooltip-number {
+                font-size: 1.7rem;
+            }
+            
+            .stats-panel {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 1rem;
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .number-tooltip {
+                min-width: 260px;
+                padding: 1rem;
+            }
+            
+            .tooltip-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-header">
+        <div class="app-title">
+            <i class="fas fa-infinity"></i>
+            Mapa Interactivo Avanzado de Números Primos
+        </div>
+        <div class="app-subtitle">
+            Explore patrones matemáticos • Hover para fórmulas detalladas • Matemáticas responsivas en tiempo real
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <!-- Panel de Control -->
+        <div class="control-panel">
+            <div class="control-section">
+                <div class="section-title">
+                    <i class="fas fa-sliders-h"></i>
+                    Configuración Avanzada
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Círculos Concéntricos (1-50):</label>
+                    <input type="range" id="num_circulos" min="1" max="50" value="15" class="form-input">
+                    <div class="range-container">
+                        <div class="range-value" id="circles-value">15</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Segmentos por Círculo (6-120):</label>
+                    <input type="range" id="divisiones_por_circulo" min="6" max="120" value="36" class="form-input">
+                    <div class="range-container">
+                        <div class="range-value" id="segments-value">36</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tipo de Mapeo Matemático:</label>
+                    <select id="tipo_mapeo" class="form-select">
+                        <option value="lineal">Lineal Secuencial</option>
+                        <option value="logaritmico">Logarítmico</option>
+                        <option value="arquimedes">Espiral de Arquímedes</option>
+                        <option value="fibonacci">Espiral de Fibonacci</option>
+                        <option value="cuadratico">Mapeo Cuadrático</option>
+                        <option value="hexagonal">Empaquetado Hexagonal</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">
+                    <i class="fas fa-atom"></i>
+                    Tipos de Primos Especiales
+                </div>
+                
+                <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_regular" checked>
+                        <div class="prime-color-indicator" style="background: var(--prime-regular);"></div>
+                        <label class="checkbox-label">Primos Regulares</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_twins" checked>
+                        <div class="prime-color-indicator" style="background: var(--prime-twin);"></div>
+                        <label class="checkbox-label">Primos Gemelos (p, p+2)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_cousins" checked>
+                        <div class="prime-color-indicator" style="background: var(--prime-cousin);"></div>
+                        <label class="checkbox-label">Primos Primos (p, p+4)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_sexy">
+                        <div class="prime-color-indicator" style="background: var(--prime-sexy);"></div>
+                        <label class="checkbox-label">Primos Sexy (p, p+6)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_sophie">
+                        <div class="prime-color-indicator" style="background: var(--prime-sophie);"></div>
+                        <label class="checkbox-label">Sophie Germain (2p+1 primo)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_palindromic">
+                        <div class="prime-color-indicator" style="background: var(--prime-palindromic);"></div>
+                        <label class="checkbox-label">Palindrómicos</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_mersenne">
+                        <div class="prime-color-indicator" style="background: var(--prime-mersenne);"></div>
+                        <label class="checkbox-label">Mersenne (2^p - 1)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_fermat">
+                        <div class="prime-color-indicator" style="background: var(--prime-fermat);"></div>
+                        <label class="checkbox-label">Fermat (2^2^n + 1)</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_composite" checked>
+                        <div class="prime-color-indicator" style="background: var(--composite);"></div>
+                        <label class="checkbox-label">Números Compuestos</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="generate-button" id="generate-btn">
+                <span class="loading-spinner" id="loading-spinner"></span>
+                <i class="fas fa-rocket"></i>
+                Generar Mapa Matemático
+            </button>
+        </div>
+        
+        <!-- Panel de Visualización -->
+        <div class="visualization-panel">
+            <div class="visualization-header">
+                <div class="visualization-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Mapa Matemático Interactivo
+                </div>
+                <div class="visualization-controls">
+                    <button class="control-button" id="zoom-in" title="Ampliar">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="control-button" id="zoom-out" title="Reducir">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="control-button" id="reset-zoom" title="Reiniciar Vista">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </button>
+                    <button class="control-button" id="fullscreen" title="Pantalla Completa">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="interactive-map" id="interactive-map">
+                <div class="prime-map-container" id="map-container">
+                    <!-- Los números se generarán aquí dinámicamente -->
+                </div>
+                
+                <!-- Panel de Estadísticas -->
+                <div class="stats-panel" id="stats-panel">
+                    <div class="stats-title">
+                        <i class="fas fa-chart-line"></i>
+                        Estadísticas en Tiempo Real
+                    </div>
+                    <div id="stats-content">
+                        <div class="stats-item">
+                            <span class="stats-label">Rango:</span>
+                            <span class="stats-value">1 - 540</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stats-label">Total Primos:</span>
+                            <span class="stats-value">99</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stats-label">Densidad:</span>
+                            <span class="stats-value">18.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tooltip Matemático Avanzado -->
+    <div class="number-tooltip" id="number-tooltip">
+        <div class="tooltip-header">
+            <div class="tooltip-number" id="tooltip-number">2</div>
+            <div class="tooltip-type-badge" id="tooltip-type-badge">Primo</div>
+        </div>
+        
+        <div class="tooltip-properties" id="tooltip-properties">
+            <div class="tooltip-section-title">
+                <i class="fas fa-info-circle"></i>
+                Propiedades
+            </div>
+            <!-- Propiedades se llenarán dinámicamente -->
+        </div>
+        
+        <div class="tooltip-mathematics" id="tooltip-mathematics">
+            <div class="tooltip-section-title">
+                <i class="fas fa-calculator"></i>
+                Matemáticas y Fórmulas
+            </div>
+            <div id="tooltip-formulas">
+                <!-- Fórmulas se llenarán dinámicamente -->
+            </div>
+            <div class="tooltip-explanation" id="tooltip-explanation">
+                <div class="tooltip-explanation-title">Explicación Matemática:</div>
+                <div class="tooltip-explanation-text" id="tooltip-explanation-text">
+                    <!-- Explicación se llenará dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales mejoradas
+        let currentData = {
+            primes: [],
+            patterns: {},
+            metrics: {},
+            mapping: 'lineal',
+            primeSet: new Set()
+        };
+        
+        let mapSettings = {
+            circles: 15,
+            segments: 36,
+            zoom: 1,
+            centerX: 0,
+            centerY: 0
+        };
+        
+        // Inicialización mejorada
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Inicializando Mapa Matemático Interactivo Avanzado...');
+            initializeControls();
+            generateInteractiveMap();
+            console.log('✅ Sistema inicializado completamente');
+        });
+        
+        // Configurar controles con mejor UX
+        function initializeControls() {
+            const circlesSlider = document.getElementById('num_circulos');
+            const segmentsSlider = document.getElementById('divisiones_por_circulo');
+            const circlesValue = document.getElementById('circles-value');
+            const segmentsValue = document.getElementById('segments-value');
+            
+            // Sliders con debounce para mejor performance
+            let debounceTimer;
+            
+            circlesSlider.addEventListener('input', function() {
+                mapSettings.circles = parseInt(this.value);
+                circlesValue.textContent = this.value;
+                
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    generateInteractiveMap();
+                }, 150);
+            });
+            
+            segmentsSlider.addEventListener('input', function() {
+                mapSettings.segments = parseInt(this.value);
+                segmentsValue.textContent = this.value;
+                
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    generateInteractiveMap();
+                }, 150);
+            });
+            
+            // Selector de mapeo
+            document.getElementById('tipo_mapeo').addEventListener('change', function() {
+                currentData.mapping = this.value;
+                generateInteractiveMap();
+            });
+            
+            // Checkboxes con mejor visualización
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    this.closest('.checkbox-item').classList.toggle('checked', this.checked);
+                    generateInteractiveMap();
+                });
+                
+                // Estado inicial
+                checkbox.closest('.checkbox-item').classList.toggle('checked', checkbox.checked);
+            });
+            
+            // Controles de zoom mejorados
+            document.getElementById('zoom-in').addEventListener('click', () => zoomMap(1.3));
+            document.getElementById('zoom-out').addEventListener('click', () => zoomMap(0.7));
+            document.getElementById('reset-zoom').addEventListener('click', resetZoom);
+            
+            // Botón principal
+            document.getElementById('generate-btn').addEventListener('click', generateInteractiveMap);
+            
+            console.log('✅ Controles avanzados inicializados');
+        }
+        
+        // Generar mapa interactivo principal
+        async function generateInteractiveMap() {
+            console.log('🎨 Generando mapa matemático interactivo...');
+            showLoading(true);
+            
+            try {
+                // Generar datos localmente para UI responsiva
+                await generateLocalPrimeData();
+                
+                // Renderizar mapa visual
+                renderInteractiveMap();
+                
+                // Actualizar estadísticas
+                updateStatistics();
+                
+                console.log(`✅ Mapa generado: ${currentData.primes.length} primos visualizados`);
+                
+            } catch (error) {
+                console.error('❌ Error generando mapa:', error);
+                showError('Error generando el mapa interactivo');
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        // Generar datos de primos localmente para UI rápida
+        async function generateLocalPrimeData() {
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            console.log(`📊 Generando datos para rango 1-${totalNumbers}`);
+            
+            // Criba de Eratóstenes optimizada
+            currentData.primes = sieveOfEratosthenes(totalNumbers);
+            currentData.primeSet = new Set(currentData.primes);
+            
+            // Análisis de patrones
+            currentData.patterns = analyzePrimePatterns(currentData.primes);
+            
+            console.log(`📈 Análisis completo: ${currentData.primes.length} primos encontrados`);
+        }
+        
+        // Criba de Eratóstenes optimizada para JavaScript
+        function sieveOfEratosthenes(limit) {
+            if (limit < 2) return [];
+            
+            const sieve = new Array(limit + 1).fill(true);
+            sieve[0] = sieve[1] = false;
+            
+            for (let i = 2; i * i <= limit; i++) {
+                if (sieve[i]) {
+                    for (let j = i * i; j <= limit; j += i) {
+                        sieve[j] = false;
+                    }
+                }
+            }
+            
+            const primes = [];
+            for (let i = 2; i <= limit; i++) {
+                if (sieve[i]) primes.push(i);
+            }
+            
+            return primes;
+        }
+        
+        // Análisis avanzado de patrones de primos
+        function analyzePrimePatterns(primes) {
+            const patterns = {
+                twins: [],
+                cousins: [],
+                sexy: [],
+                sophieGermain: [],
+                palindromes: [],
+                mersenne: [],
+                fermat: []
+            };
+            
+            const primeSet = new Set(primes);
+            
+            primes.forEach(p => {
+                // Primos gemelos (p, p+2)
+                if (primeSet.has(p + 2)) {
+                    patterns.twins.push([p, p + 2]);
+                }
+                
+                // Primos primos (p, p+4)
+                if (primeSet.has(p + 4)) {
+                    patterns.cousins.push([p, p + 4]);
+                }
+                
+                // Primos sexy (p, p+6)
+                if (primeSet.has(p + 6)) {
+                    patterns.sexy.push([p, p + 6]);
+                }
+                
+                // Sophie Germain (p, 2p+1)
+                if (primeSet.has(2 * p + 1)) {
+                    patterns.sophieGermain.push([p, 2 * p + 1]);
+                }
+                
+                // Palindrómicos
+                if (isPalindromic(p)) {
+                    patterns.palindromes.push(p);
+                }
+                
+                // Mersenne
+                if (isMersennePrime(p)) {
+                    patterns.mersenne.push(p);
+                }
+                
+                // Fermat
+                if (isFermatPrime(p)) {
+                    patterns.fermat.push(p);
+                }
+            });
+            
+            return patterns;
+        }
+        
+        // Renderizar mapa visual interactivo avanzado
+        function renderInteractiveMap() {
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.innerHTML = '';
+            
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            
+            // Configuración visual mejorada
+            const mapWidth = mapContainer.offsetWidth || 800;
+            const mapHeight = mapContainer.offsetHeight || 600;
+            const centerX = mapWidth / 2;
+            const centerY = mapHeight / 2;
+            const maxRadius = Math.min(centerX, centerY) - 80;
+            
+            // Generar elementos visuales para cada número
+            for (let number = 1; number <= totalNumbers; number++) {
+                const position = calculateAdvancedPosition(number, totalNumbers, centerX, centerY, maxRadius);
+                const element = createAdvancedNumberElement(number, position);
+                mapContainer.appendChild(element);
+            }
+            
+            console.log(`🎨 Renderizados ${totalNumbers} elementos con matemáticas avanzadas`);
+        }
+        
+        // Calcular posición según mapeo matemático avanzado
+        function calculateAdvancedPosition(number, total, centerX, centerY, maxRadius) {
+            const circles = mapSettings.circles;
+            const segments = mapSettings.segments;
+            
+            let circle, segment;
+            
+            switch (currentData.mapping) {
+                case 'lineal':
+                    circle = Math.floor((number - 1) / segments);
+                    segment = (number - 1) % segments;
+                    break;
+                    
+                case 'logaritmico':
+                    const logPos = Math.log(number) / Math.log(total);
+                    const totalPos = Math.floor(logPos * circles * segments);
+                    circle = Math.floor(totalPos / segments);
+                    segment = totalPos % segments;
+                    break;
+                    
+                case 'arquimedes':
+                    const theta = 2 * Math.PI * Math.sqrt(number / total);
+                    const r = Math.sqrt(number / total) * circles;
+                    circle = Math.min(Math.floor(r), circles - 1);
+                    segment = Math.floor((theta % (2 * Math.PI)) / (2 * Math.PI) * segments);
+                    break;
+                    
+                case 'fibonacci':
+                    const phi = (1 + Math.sqrt(5)) / 2;
+                    const fibTheta = 2 * Math.PI * number / phi;
+                    const fibR = Math.sqrt(number) / Math.sqrt(total) * circles;
+                    circle = Math.min(Math.floor(fibR), circles - 1);
+                    segment = Math.floor((fibTheta % (2 * Math.PI)) / (2 * Math.PI) * segments);
+                    break;
+                    
+                case 'cuadratico':
+                    const quadPos = Math.sqrt(number / total);
+                    const quadTotal = Math.floor(quadPos * circles * segments);
+                    circle = Math.floor(quadTotal / segments);
+                    segment = quadTotal % segments;
+                    break;
+                    
+                case 'hexagonal':
+                    const q = Math.floor(Math.sqrt(number));
+                    const r = number - q * q;
+                    circle = Math.min(q % circles, circles - 1);
+                    segment = Math.floor((r * segments) / (2 * q + 1)) || 0;
+                    break;
+                    
+                default:
+                    circle = Math.floor((number - 1) / segments);
+                    segment = (number - 1) % segments;
+            }
+            
+            // Convertir a coordenadas cartesianas
+            const radius = (circle + 0.5) * (maxRadius / circles);
+            const angle = (segment / segments) * 2 * Math.PI - Math.PI / 2; // Start from top
+            
+            return {
+                x: centerX + radius * Math.cos(angle),
+                y: centerY + radius * Math.sin(angle),
+                circle: circle,
+                segment: segment,
+                radius: radius,
+                angle: angle
+            };
+        }
+        
+        // Crear elemento visual avanzado para un número
+        function createAdvancedNumberElement(number, position) {
+            const element = document.createElement('div');
+            element.className = 'prime-circle';
+            element.dataset.number = number;
+            
+            const isPrime = currentData.primeSet.has(number);
+            
+            // Determinar tipos y clases CSS
+            const types = determineAdvancedPrimeType(number, isPrime);
+            element.className += ` ${types.join(' ')}`;
+            
+            // Tamaño adaptativo basado en la posición y tipo
+            let baseSize = Math.max(4, 10 - position.circle * 0.4);
+            
+            // Tamaños especiales para primos importantes
+            if (types.includes('mersenne') || types.includes('fermat')) {
+                baseSize *= 1.5;
+            } else if (types.includes('multiple-types')) {
+                baseSize *= 1.3;
+            }
+            
+            element.style.width = `${baseSize}px`;
+            element.style.height = `${baseSize}px`;
+            
+            // Posición
+            element.style.left = `${position.x - baseSize/2}px`;
+            element.style.top = `${position.y - baseSize/2}px`;
+            
+            // Eventos mejorados
+            element.addEventListener('mouseenter', (e) => showAdvancedTooltip(e, number));
+            element.addEventListener('mouseleave', hideTooltip);
+            element.addEventListener('mousemove', (e) => updateTooltipPosition(e));
+            
+            return element;
+        }
+        
+        // Determinar tipos avanzados de primo
+        function determineAdvancedPrimeType(number, isPrime) {
+            if (!isPrime) return document.getElementById('show_composite').checked ? ['composite'] : [];
+            
+            const types = [];
+            
+            // Verificar tipos especiales según configuración
+            if (isTwinPrime(number) && document.getElementById('show_twins').checked) {
+                types.push('twin');
+            }
+            if (isCousinPrime(number) && document.getElementById('show_cousins').checked) {
+                types.push('cousin');
+            }
+            if (isSexyPrime(number) && document.getElementById('show_sexy').checked) {
+                types.push('sexy');
+            }
+            if (isSophieGermainPrime(number) && document.getElementById('show_sophie').checked) {
+                types.push('sophie-germain');
+            }
+            if (isPalindromic(number) && document.getElementById('show_palindromic').checked) {
+                types.push('palindromic');
+            }
+            if (isMersennePrime(number) && document.getElementById('show_mersenne').checked) {
+                types.push('mersenne');
+            }
+            if (isFermatPrime(number) && document.getElementById('show_fermat').checked) {
+                types.push('fermat');
+            }
+            
+            // Múltiples tipos especiales
+            if (types.length > 1) {
+                types.push('multiple-types');
+            } else if (types.length === 0 && document.getElementById('show_regular').checked) {
+                types.push('regular');
+            }
+            
+            return types;
+        }
+        
+        // Funciones de verificación de tipos de primos
+        function isTwinPrime(n) {
+            return currentData.primeSet.has(n-2) || currentData.primeSet.has(n+2);
+        }
+        
+        function isCousinPrime(n) {
+            return currentData.primeSet.has(n-4) || currentData.primeSet.has(n+4);
+        }
+        
+        function isSexyPrime(n) {
+            return currentData.primeSet.has(n-6) || currentData.primeSet.has(n+6);
+        }
+        
+        function isSophieGermainPrime(n) {
+            return currentData.primeSet.has(2*n + 1);
+        }
+        
+        function isPalindromic(n) {
+            const str = n.toString();
+            return str === str.split('').reverse().join('') && str.length > 1;
+        }
+        
+        function isMersennePrime(n) {
+            // Verificar si n = 2^p - 1 para algún primo p
+            let temp = n + 1;
+            let p = 0;
+            while (temp > 1 && temp % 2 === 0) {
+                temp /= 2;
+                p++;
+            }
+            return temp === 1 && isPrimeSimple(p) && p > 1;
+        }
+        
+        function isFermatPrime(n) {
+            // Verificar si n = 2^(2^k) + 1
+            let temp = n - 1;
+            let k = 0;
+            let powerOfTwo = 1;
+            
+            while (temp > 0 && temp % 2 === 0) {
+                temp /= 2;
+                k++;
+            }
+            
+            if (temp !== 0) return false;
+            
+            // Verificar si k es una potencia de 2
+            let kTemp = k;
+            while (kTemp > 1 && kTemp % 2 === 0) {
+                kTemp /= 2;
+            }
+            
+            return kTemp === 1;
+        }
+        
+        function isPrimeSimple(n) {
+            if (n < 2) return false;
+            if (n === 2) return true;
+            if (n % 2 === 0) return false;
+            for (let i = 3; i * i <= n; i += 2) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+        
+        // Mostrar tooltip avanzado con matemáticas
+        function showAdvancedTooltip(event, number) {
+            const tooltip = document.getElementById('number-tooltip');
+            const tooltipNumber = document.getElementById('tooltip-number');
+            const tooltipTypeBadge = document.getElementById('tooltip-type-badge');
+            const tooltipProperties = document.getElementById('tooltip-properties');
+            const tooltipFormulas = document.getElementById('tooltip-formulas');
+            const tooltipExplanationText = document.getElementById('tooltip-explanation-text');
+            
+            const isPrime = currentData.primeSet.has(number);
+            
+            // Configurar header
+            tooltipNumber.textContent = number.toLocaleString();
+            tooltipTypeBadge.textContent = isPrime ? 'NÚMERO PRIMO' : 'COMPUESTO';
+            tooltipTypeBadge.style.background = isPrime ? 
+                'linear-gradient(45deg, var(--primary-color), var(--secondary-color))' :
+                'linear-gradient(45deg, #666, #999)';
+            
+            // Generar propiedades avanzadas
+            const properties = generateAdvancedProperties(number, isPrime);
+            const propertiesContainer = tooltipProperties.querySelector('.tooltip-section-title').nextElementSibling ||
+                                      document.createElement('div');
+            propertiesContainer.innerHTML = '';
+            
+            properties.forEach(prop => {
+                const propDiv = document.createElement('div');
+                propDiv.className = 'tooltip-property';
+                propDiv.innerHTML = `<i class="${prop.icon} tooltip-property-icon"></i> ${prop.text}`;
+                propertiesContainer.appendChild(propDiv);
+            });
+            
+            if (!tooltipProperties.querySelector('.tooltip-section-title').nextElementSibling) {
+                tooltipProperties.appendChild(propertiesContainer);
+            }
+            
+            // Generar fórmulas matemáticas avanzadas
+            const formulas = generateAdvancedFormulas(number, isPrime);
+            tooltipFormulas.innerHTML = '';
+            
+            formulas.forEach(formula => {
+                const formulaDiv = document.createElement('div');
+                formulaDiv.className = 'tooltip-formula';
+                formulaDiv.textContent = formula;
+                tooltipFormulas.appendChild(formulaDiv);
+            });
+            
+            // Generar explicación matemática detallada
+            const explanation = generateMathematicalExplanation(number, isPrime);
+            tooltipExplanationText.textContent = explanation;
+            
+            // Posicionar y mostrar
+            updateTooltipPosition(event);
+            tooltip.classList.add('visible');
+        }
+        
+        // Generar propiedades matemáticas avanzadas
+        function generateAdvancedProperties(number, isPrime) {
+            const properties = [];
+            
+            if (isPrime) {
+                properties.push({ icon: 'fas fa-crown', text: `Número Primo #${currentData.primes.indexOf(number) + 1}` });
+                
+                if (isTwinPrime(number)) {
+                    const twin = currentData.primeSet.has(number - 2) ? number - 2 : number + 2;
+                    properties.push({ icon: 'fas fa-link', text: `Primo Gemelo con ${twin}` });
+                }
+                
+                if (isCousinPrime(number)) {
+                    const cousin = currentData.primeSet.has(number - 4) ? number - 4 : number + 4;
+                    properties.push({ icon: 'fas fa-users', text: `Primo Primo con ${cousin}` });
+                }
+                
+                if (isSophieGermainPrime(number)) {
+                    properties.push({ icon: 'fas fa-female', text: `Sophie Germain → ${2*number + 1}` });
+                }
+                
+                if (isMersennePrime(number)) {
+                    const p = Math.log2(number + 1);
+                    properties.push({ icon: 'fas fa-star', text: `Mersenne: 2^${p} - 1` });
+                }
+                
+                if (isPalindromic(number)) {
+                    properties.push({ icon: 'fas fa-mirror', text: 'Palindrómico' });
+                }
+                
+                if (isFermatPrime(number)) {
+                    properties.push({ icon: 'fas fa-mountain', text: 'Primo de Fermat' });
+                }
+                
+                // Gap con primos adyacentes
+                const currentIndex = currentData.primes.indexOf(number);
+                if (currentIndex > 0) {
+                    const gap = number - currentData.primes[currentIndex - 1];
+                    properties.push({ icon: 'fas fa-ruler-horizontal', text: `Gap anterior: ${gap}` });
+                }
+                if (currentIndex < currentData.primes.length - 1) {
+                    const gap = currentData.primes[currentIndex + 1] - number;
+                    properties.push({ icon: 'fas fa-ruler-horizontal', text: `Gap siguiente: ${gap}` });
+                }
+                
+            } else {
+                properties.push({ icon: 'fas fa-calculator', text: 'Número Compuesto' });
+                
+                // Factorización
+                const factors = getFactors(number);
+                if (factors.length > 0 && factors.length <= 6) {
+                    properties.push({ 
+                        icon: 'fas fa-divide', 
+                        text: `Factores: ${factors.join(' × ')}`
+                    });
+                }
+                
+                if (isPerfectSquare(number)) {
+                    const sqrt = Math.sqrt(number);
+                    properties.push({ icon: 'fas fa-square', text: `Cuadrado de ${sqrt}` });
+                }
+                
+                if (isPerfectCube(number)) {
+                    const cbrt = Math.round(Math.pow(number, 1/3));
+                    properties.push({ icon: 'fas fa-cube', text: `Cubo de ${cbrt}` });
+                }
+            }
+            
+            // Propiedades generales
+            properties.push({ 
+                icon: number % 2 === 0 ? 'fas fa-balance-scale' : 'fas fa-balance-scale-right', 
+                text: number % 2 === 0 ? 'Par' : 'Impar' 
+            });
+            
+            // Congruencias modulares importantes
+            properties.push({ icon: 'fas fa-percent', text: `≡ ${number % 6} (mod 6)` });
+            
+            return properties;
+        }
+        
+        // Generar fórmulas matemáticas avanzadas
+        function generateAdvancedFormulas(number, isPrime) {
+            const formulas = [];
+            
+            if (isPrime) {
+                // Función de cuenta de primos
+                formulas.push(`π(${number}) ≈ ${number}/ln(${number}) ≈ ${Math.round(number / Math.log(number))}`);
+                
+                // Teorema de números primos
+                if (number > 10) {
+                    const approx = number / Math.log(number);
+                    const error = Math.abs(currentData.primes.indexOf(number) + 1 - approx);
+                    formulas.push(`Error aprox.: ${error.toFixed(2)}`);
+                }
+                
+                if (isMersennePrime(number)) {
+                    const p = Math.log2(number + 1);
+                    formulas.push(`M₍${p}₎ = 2^${p} - 1 = ${number}`);
+                    formulas.push(`Perfectos: 2^${p-1} × (2^${p} - 1) = ${(Math.pow(2, p-1) * number).toLocaleString()}`);
+                }
+                
+                if (isFermatPrime(number)) {
+                    let k = 0, temp = number - 1;
+                    while (temp % 2 === 0) {
+                        temp /= 2;
+                        k++;
+                    }
+                    const n = Math.log2(k);
+                    formulas.push(`F₍${n}₎ = 2^(2^${n}) + 1 = ${number}`);
+                }
+                
+                if (isSophieGermainPrime(number)) {
+                    formulas.push(`2p + 1 = 2(${number}) + 1 = ${2*number + 1} (también primo)`);
+                }
+                
+                // Test de primalidad de Wilson
+                if (number <= 50) {
+                    formulas.push(`Wilson: (${number}-1)! ≡ -1 (mod ${number})`);
+                }
+                
+            } else {
+                const factors = getFactors(number);
+                if (factors.length > 0) {
+                    formulas.push(`${number} = ${factors.join(' × ')}`);
+                    
+                    // Función totiente de Euler
+                    const totient = eulerTotient(number);
+                    formulas.push(`φ(${number}) = ${totient}`);
+                    
+                    // Suma de divisores
+                    const divisors = getDivisors(number);
+                    const sumDivisors = divisors.reduce((a, b) => a + b, 0);
+                    formulas.push(`σ(${number}) = ${sumDivisors} (suma de divisores)`);
+                }
+            }
+            
+            // Congruencias modulares
+            formulas.push(`${number} ≡ ${number % 6} (mod 6)`);
+            formulas.push(`${number} ≡ ${number % 10} (mod 10)`);
+            
+            // Representación binaria
+            formulas.push(`Binario: ${number.toString(2)}`);
+            
+            return formulas;
+        }
+        
+        // Generar explicación matemática detallada
+        function generateMathematicalExplanation(number, isPrime) {
+            if (isPrime) {
+                let explanation = `El número ${number} es primo, lo que significa que solo es divisible por 1 y por sí mismo.`;
+                
+                if (isMersennePrime(number)) {
+                    const p = Math.log2(number + 1);
+                    explanation += ` Es un primo de Mersenne de la forma 2^${p} - 1, donde ${p} también es primo. Los primos de Mersenne están relacionados con los números perfectos.`;
+                } else if (isFermatPrime(number)) {
+                    explanation += ` Es un primo de Fermat, una clase muy especial de primos relacionados con la construcción geométrica usando regla y compás.`;
+                } else if (isTwinPrime(number)) {
+                    const twin = currentData.primeSet.has(number - 2) ? number - 2 : number + 2;
+                    explanation += ` Forma parte de un par de primos gemelos con ${twin}, separados por exactamente 2 unidades.`;
+                } else if (isSophieGermainPrime(number)) {
+                    explanation += ` Es un primo de Sophie Germain, lo que significa que 2p + 1 = ${2*number + 1} también es primo.`;
+                }
+                
+                const position = currentData.primes.indexOf(number) + 1;
+                explanation += ` Es el ${position}° número primo en secuencia.`;
+                
+                return explanation;
+            } else {
+                const factors = getFactors(number);
+                let explanation = `El número ${number} es compuesto, siendo el producto de `;
+                
+                if (factors.length === 2) {
+                    explanation += `dos primos: ${factors[0]} × ${factors[1]}.`;
+                } else {
+                    explanation += `múltiples factores primos: ${factors.join(' × ')}.`;
+                }
+                
+                if (isPerfectSquare(number)) {
+                    const sqrt = Math.sqrt(number);
+                    explanation += ` Es un cuadrado perfecto (${sqrt}²).`;
+                }
+                
+                const totient = eulerTotient(number);
+                explanation += ` Tiene ${totient} números coprimos menores que él.`;
+                
+                return explanation;
+            }
+        }
+        
+        // Funciones auxiliares matemáticas
+        function getFactors(n) {
+            const factors = [];
+            let temp = n;
+            
+            for (let i = 2; i * i <= temp; i++) {
+                while (temp % i === 0) {
+                    factors.push(i);
+                    temp /= i;
+                }
+            }
+            
+            if (temp > 1) {
+                factors.push(temp);
+            }
+            
+            return factors;
+        }
+        
+        function getDivisors(n) {
+            const divisors = [];
+            for (let i = 1; i * i <= n; i++) {
+                if (n % i === 0) {
+                    divisors.push(i);
+                    if (i !== n / i) {
+                        divisors.push(n / i);
+                    }
+                }
+            }
+            return divisors.sort((a, b) => a - b);
+        }
+        
+        function eulerTotient(n) {
+            let result = n;
+            for (let p = 2; p * p <= n; p++) {
+                if (n % p === 0) {
+                    while (n % p === 0) {
+                        n /= p;
+                    }
+                    result -= result / p;
+                }
+            }
+            if (n > 1) {
+                result -= result / n;
+            }
+            return Math.floor(result);
+        }
+        
+        function isPerfectSquare(n) {
+            const sqrt = Math.sqrt(n);
+            return sqrt === Math.floor(sqrt);
+        }
+        
+        function isPerfectCube(n) {
+            const cbrt = Math.round(Math.pow(n, 1/3));
+            return cbrt * cbrt * cbrt === n;
+        }
+        
+        // Ocultar tooltip
+        function hideTooltip() {
+            const tooltip = document.getElementById('number-tooltip');
+            tooltip.classList.remove('visible');
+        }
+        
+        // Actualizar posición del tooltip con mejores cálculos
+        function updateTooltipPosition(event) {
+            const tooltip = document.getElementById('number-tooltip');
+            const rect = tooltip.getBoundingClientRect();
+            
+            let x = event.clientX + 20;
+            let y = event.clientY - 10;
+            
+            // Ajustar si se sale de la pantalla
+            if (x + rect.width > window.innerWidth - 20) {
+                x = event.clientX - rect.width - 20;
+            }
+            if (y + rect.height > window.innerHeight - 20) {
+                y = event.clientY - rect.height - 10;
+            }
+            if (y < 20) {
+                y = event.clientY + 20;
+            }
+            
+            tooltip.style.left = `${x}px`;
+            tooltip.style.top = `${y}px`;
+        }
+        
+        // Actualizar estadísticas avanzadas
+        function updateStatistics() {
+            const statsContent = document.getElementById('stats-content');
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            const primesCount = currentData.primes.length;
+            const density = (primesCount / totalNumbers * 100).toFixed(2);
+            
+            // Calcular estadísticas adicionales
+            const twinPairs = currentData.patterns.twins?.length || 0;
+            const sophieGermainCount = currentData.patterns.sophieGermain?.length || 0;
+            const mersenneCount = currentData.patterns.mersenne?.length || 0;
+            
+            statsContent.innerHTML = `
+                <div class="stats-item">
+                    <span class="stats-label">Rango:</span>
+                    <span class="stats-value">1 - ${totalNumbers.toLocaleString()}</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Total Primos:</span>
+                    <span class="stats-value">${primesCount.toLocaleString()}</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Densidad:</span>
+                    <span class="stats-value">${density}%</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Gemelos:</span>
+                    <span class="stats-value">${twinPairs}</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Sophie Germain:</span>
+                    <span class="stats-value">${sophieGermainCount}</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Mersenne:</span>
+                    <span class="stats-value">${mersenneCount}</span>
+                </div>
+                <div class="stats-item">
+                    <span class="stats-label">Mapeo:</span>
+                    <span class="stats-value">${currentData.mapping.charAt(0).toUpperCase() + currentData.mapping.slice(1)}</span>
+                </div>
+            `;
+        }
+        
+        // Control de zoom mejorado
+        function zoomMap(factor) {
+            mapSettings.zoom *= factor;
+            mapSettings.zoom = Math.max(0.3, Math.min(mapSettings.zoom, 8));
+            
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.style.transform = `scale(${mapSettings.zoom})`;
+            
+            console.log(`🔍 Zoom: ${mapSettings.zoom.toFixed(2)}x`);
+        }
+        
+        function resetZoom() {
+            mapSettings.zoom = 1;
+            mapSettings.centerX = 0;
+            mapSettings.centerY = 0;
+            
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.style.transform = 'scale(1)';
+            
+            console.log('🔄 Vista reiniciada');
+        }
+        
+        // UI helpers mejorados
+        function showLoading(show) {
+            const spinner = document.getElementById('loading-spinner');
+            const button = document.getElementById('generate-btn');
+            const buttonText = button.querySelector('i');
+            
+            spinner.classList.toggle('active', show);
+            button.disabled = show;
+            
+            if (show) {
+                buttonText.className = 'fas fa-cog fa-spin';
+            } else {
+                buttonText.className = 'fas fa-rocket';
+            }
+        }
+        
+        function showError(message) {
+            console.error('❌', message);
+            // Aquí podrías implementar un toast notification
+        }
+        
+        console.log('✅ Mapa Matemático Interactivo Avanzado cargado completamente');
+    </script>
+</body>
+</html>

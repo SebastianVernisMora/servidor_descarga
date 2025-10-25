@@ -42,7 +42,7 @@ curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: applica
 python3 pregenerate_static_maps.py
 
 # 🌐 DESPLEGAR EN PUERTO PÚBLICO 3000 - VERSIÓN ESTÁTICA
-./deploy_static_final.sh
+./scripts/deployment/deploy_static_final.sh
 
 # Ver logs de la aplicación estática
 tail -f static_deployment.log
@@ -110,3 +110,17 @@ http://TU_DOMINIO:3000/                  # 🔥 980 mapas instantáneos
 - Implement debouncing for real-time controls (300ms)
 - Responsive design with mobile-first approach
 - CSS custom properties for theming and consistency
+
+## 📚 Documentation Structure
+
+### Main Documentation:
+- `README.md` - Project overview and quick start
+- `CRUSH.md` - This file, development guide
+- `docs/INDEX.md` - Documentation index with all links
+- `docs/SCRIPTS_DOCUMENTATION.md` - Detailed script descriptions
+
+### Script Organization:
+- `scripts/deployment/` - Deployment scripts
+- `scripts/maintenance/` - System maintenance scripts  
+- `scripts/testing/` - Verification and testing scripts
+- `archive/` - Old/deprecated files and scripts

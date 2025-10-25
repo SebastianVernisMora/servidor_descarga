@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo de Números Primos</title>
+    
+    <!-- CSS Framework y Librerías -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #FFD700;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --bg-light: rgba(255, 255, 255, 0.95);
+            --bg-dark: rgba(0, 0, 0, 0.8);
+            --shadow-light: 0 8px 32px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 8px 40px rgba(0,0,0,0.3);
+            --transition-fast: all 0.2s ease;
+            --transition-smooth: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        .app-header {
+            background: var(--bg-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-heavy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        .app-title {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--accent-color), #FF6B9D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .app-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .main-container {
+            display: flex;
+            min-height: calc(100vh - 120px);
+        }
+        
+        /* Panel de Control */
+        .control-panel {
+            width: 320px;
+            background: var(--bg-light);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-light);
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        
+        .control-section {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            background: white;
+        }
+        
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: white;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .checkbox-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            cursor: pointer;
+        }
+        
+        .checkbox-label {
+            font-size: 0.9rem;
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .prime-color-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 4px rgba(0,0,0,0.2);
+        }
+        
+        .generate-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .generate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .generate-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading-spinner {
+            display: none;
+        }
+        
+        .loading-spinner.active {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Panel de Visualización */
+        .visualization-panel {
+            flex: 1;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .visualization-header {
+            padding: 1rem 1.5rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .visualization-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .visualization-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .control-button {
+            padding: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        
+        .control-button:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Contenedor del Mapa Interactivo */
+        .interactive-map {
+            width: 100%;
+            height: calc(100vh - 200px);
+            position: relative;
+            background: radial-gradient(circle at center, #1a1a2e, #16213e);
+            overflow: hidden;
+            cursor: crosshair;
+        }
+        
+        .prime-map-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+        
+        .prime-circle {
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .prime-circle:hover {
+            transform: scale(1.5);
+            z-index: 50;
+            border-width: 2px;
+            filter: brightness(1.3);
+        }
+        
+        .prime-circle.composite {
+            background: #404040;
+            opacity: 0.3;
+        }
+        
+        .prime-circle.regular {
+            background: #4D96FF;
+        }
+        
+        .prime-circle.twin {
+            background: #FF0000;
+            box-shadow: 0 0 8px rgba(255,0,0,0.5);
+        }
+        
+        .prime-circle.cousin {
+            background: #FF8C00;
+        }
+        
+        .prime-circle.sexy {
+            background: #FF1493;
+        }
+        
+        .prime-circle.sophie-germain {
+            background: #9400D3;
+            box-shadow: 0 0 8px rgba(148,0,211,0.5);
+        }
+        
+        .prime-circle.palindromic {
+            background: #FFD700;
+            box-shadow: 0 0 8px rgba(255,215,0,0.5);
+        }
+        
+        .prime-circle.mersenne {
+            background: #00FFFF;
+            box-shadow: 0 0 12px rgba(0,255,255,0.8);
+        }
+        
+        .prime-circle.fermat {
+            background: #ADFF2F;
+            box-shadow: 0 0 12px rgba(173,255,47,0.8);
+        }
+        
+        .prime-circle.multiple-types {
+            background: linear-gradient(45deg, #FF0000, #00FFFF, #FFD700);
+            box-shadow: 0 0 15px rgba(255,255,255,0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* Tooltip del Número */
+        .number-tooltip {
+            position: absolute;
+            background: var(--bg-dark);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-heavy);
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: var(--transition-fast);
+            z-index: 1000;
+            min-width: 280px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .number-tooltip.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .tooltip-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tooltip-properties {
+            margin-bottom: 1rem;
+        }
+        
+        .tooltip-property {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .tooltip-formulas {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 1rem;
+        }
+        
+        .tooltip-section-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tooltip-formula {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.3rem;
+        }
+        
+        /* Panel de Estadísticas */
+        .stats-panel {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--bg-dark);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stats-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--accent-color);
+        }
+        
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .stats-value {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .control-panel {
+                width: 100%;
+                max-height: 40vh;
+            }
+            
+            .interactive-map {
+                height: 60vh;
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .control-panel {
+                padding: 1rem;
+            }
+            
+            .app-header {
+                padding: 0.75rem 1rem;
+            }
+            
+            .app-title {
+                font-size: 1.5rem;
+            }
+            
+            .number-tooltip {
+                min-width: 250px;
+            }
+            
+            .stats-panel {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 1rem;
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .number-tooltip {
+                min-width: 220px;
+                font-size: 0.85rem;
+            }
+            
+            .tooltip-number {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-header">
+        <div class="app-title">
+            <i class="fas fa-chart-scatter"></i>
+            Mapa Interactivo de Números Primos
+        </div>
+        <div class="app-subtitle">
+            Explore patrones matemáticos de forma interactiva • Hover para detalles • Responsive Design
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <!-- Panel de Control -->
+        <div class="control-panel">
+            <div class="control-section">
+                <div class="section-title">
+                    <i class="fas fa-cog"></i>
+                    Configuración
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Círculos Concéntricos (1-50):</label>
+                    <input type="range" id="num_circulos" min="1" max="50" value="15" class="form-input">
+                    <div class="range-value" id="circles-value">15</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Segmentos por Círculo (6-72):</label>
+                    <input type="range" id="divisiones_por_circulo" min="6" max="72" value="36" class="form-input">
+                    <div class="range-value" id="segments-value">36</div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tipo de Mapeo:</label>
+                    <select id="tipo_mapeo" class="form-select">
+                        <option value="lineal">Lineal Secuencial</option>
+                        <option value="logaritmico">Logarítmico</option>
+                        <option value="arquimedes">Espiral de Arquímedes</option>
+                        <option value="fibonacci">Espiral de Fibonacci</option>
+                        <option value="cuadratico">Mapeo Cuadrático</option>
+                        <option value="hexagonal">Empaquetado Hexagonal</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">
+                    <i class="fas fa-palette"></i>
+                    Tipos de Primos
+                </div>
+                
+                <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_regular" checked>
+                        <div class="prime-color-indicator" style="background: #4D96FF;"></div>
+                        <label class="checkbox-label">Primos Regulares</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_twins" checked>
+                        <div class="prime-color-indicator" style="background: #FF0000;"></div>
+                        <label class="checkbox-label">Primos Gemelos</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_cousins" checked>
+                        <div class="prime-color-indicator" style="background: #FF8C00;"></div>
+                        <label class="checkbox-label">Primos Primos</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_sexy">
+                        <div class="prime-color-indicator" style="background: #FF1493;"></div>
+                        <label class="checkbox-label">Primos Sexy</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_sophie">
+                        <div class="prime-color-indicator" style="background: #9400D3;"></div>
+                        <label class="checkbox-label">Sophie Germain</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_palindromic">
+                        <div class="prime-color-indicator" style="background: #FFD700;"></div>
+                        <label class="checkbox-label">Palindrómicos</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_mersenne">
+                        <div class="prime-color-indicator" style="background: #00FFFF;"></div>
+                        <label class="checkbox-label">Mersenne</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_fermat">
+                        <div class="prime-color-indicator" style="background: #ADFF2F;"></div>
+                        <label class="checkbox-label">Fermat</label>
+                    </div>
+                    
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="show_composite">
+                        <div class="prime-color-indicator" style="background: #404040;"></div>
+                        <label class="checkbox-label">Números Compuestos</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="generate-button" id="generate-btn">
+                <span class="loading-spinner" id="loading-spinner"></span>
+                <i class="fas fa-play"></i>
+                Generar Mapa Interactivo
+            </button>
+        </div>
+        
+        <!-- Panel de Visualización -->
+        <div class="visualization-panel">
+            <div class="visualization-header">
+                <div class="visualization-title">
+                    <i class="fas fa-map"></i>
+                    Mapa Interactivo
+                </div>
+                <div class="visualization-controls">
+                    <button class="control-button" id="zoom-in">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="control-button" id="zoom-out">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="control-button" id="reset-zoom">
+                        <i class="fas fa-refresh"></i>
+                    </button>
+                    <button class="control-button" id="fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="interactive-map" id="interactive-map">
+                <div class="prime-map-container" id="map-container">
+                    <!-- Los números se generarán aquí dinámicamente -->
+                </div>
+                
+                <!-- Panel de Estadísticas -->
+                <div class="stats-panel" id="stats-panel">
+                    <div class="stats-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Estadísticas en Tiempo Real
+                    </div>
+                    <div id="stats-content">
+                        <div class="stats-item">
+                            <span>Rango:</span>
+                            <span class="stats-value">1 - 540</span>
+                        </div>
+                        <div class="stats-item">
+                            <span>Total Primos:</span>
+                            <span class="stats-value">99</span>
+                        </div>
+                        <div class="stats-item">
+                            <span>Densidad:</span>
+                            <span class="stats-value">18.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tooltip para mostrar información del número -->
+    <div class="number-tooltip" id="number-tooltip">
+        <div class="tooltip-number" id="tooltip-number">2</div>
+        <div class="tooltip-properties" id="tooltip-properties">
+            <!-- Propiedades se llenarán dinámicamente -->
+        </div>
+        <div class="tooltip-formulas" id="tooltip-formulas">
+            <div class="tooltip-section-title">Fórmulas y Propiedades:</div>
+            <!-- Fórmulas se llenarán dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let currentData = {
+            primes: [],
+            patterns: {},
+            metrics: {},
+            mapping: 'lineal'
+        };
+        
+        let mapSettings = {
+            circles: 15,
+            segments: 36,
+            zoom: 1,
+            centerX: 0,
+            centerY: 0
+        };
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Inicializando Mapa Interactivo de Primos...');
+            initializeControls();
+            generateInteractiveMap();
+        });
+        
+        // Configurar controles
+        function initializeControls() {
+            // Sliders con valores dinámicos
+            const circlesSlider = document.getElementById('num_circulos');
+            const segmentsSlider = document.getElementById('divisiones_por_circulo');
+            const circlesValue = document.getElementById('circles-value');
+            const segmentsValue = document.getElementById('segments-value');
+            
+            circlesSlider.addEventListener('input', function() {
+                mapSettings.circles = parseInt(this.value);
+                circlesValue.textContent = this.value;
+                generateInteractiveMap();
+            });
+            
+            segmentsSlider.addEventListener('input', function() {
+                mapSettings.segments = parseInt(this.value);
+                segmentsValue.textContent = this.value;
+                generateInteractiveMap();
+            });
+            
+            // Selector de mapeo
+            document.getElementById('tipo_mapeo').addEventListener('change', function() {
+                currentData.mapping = this.value;
+                generateInteractiveMap();
+            });
+            
+            // Checkboxes de tipos de primos
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', generateInteractiveMap);
+            });
+            
+            // Controles de zoom
+            document.getElementById('zoom-in').addEventListener('click', () => zoomMap(1.2));
+            document.getElementById('zoom-out').addEventListener('click', () => zoomMap(0.8));
+            document.getElementById('reset-zoom').addEventListener('click', resetZoom);
+            
+            // Botón principal
+            document.getElementById('generate-btn').addEventListener('click', generateInteractiveMap);
+            
+            console.log('✅ Controles inicializados');
+        }
+        
+        // Generar mapa interactivo principal
+        async function generateInteractiveMap() {
+            console.log('🎨 Generando mapa interactivo...');
+            showLoading(true);
+            
+            try {
+                // Obtener datos del backend
+                await fetchPrimeData();
+                
+                // Renderizar mapa visual
+                renderInteractiveMap();
+                
+                // Actualizar estadísticas
+                updateStatistics();
+                
+                console.log('✅ Mapa generado exitosamente');
+                
+            } catch (error) {
+                console.error('❌ Error generando mapa:', error);
+                showError('Error generando el mapa interactivo');
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        // Obtener datos de primos del backend
+        async function fetchPrimeData() {
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            
+            const requestData = {
+                num_circulos: mapSettings.circles,
+                divisiones_por_circulo: mapSettings.segments,
+                mostrar_primos_gemelos: document.getElementById('show_twins').checked,
+                mostrar_primos_primos: document.getElementById('show_cousins').checked,
+                mostrar_primos_sexy: document.getElementById('show_sexy').checked,
+                mostrar_primos_regulares: document.getElementById('show_regular').checked,
+                mostrar_sophie_germain: document.getElementById('show_sophie').checked,
+                mostrar_palindromos: document.getElementById('show_palindromic').checked,
+                mostrar_mersenne: document.getElementById('show_mersenne').checked,
+                mostrar_fermat: document.getElementById('show_fermat').checked,
+                tipo_mapeo: currentData.mapping,
+                incluir_estadisticas: true,
+                usar_cache: true
+            };
+            
+            const response = await fetch('/generar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestData)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Error del servidor: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            if (data.error) {
+                throw new Error(data.error);
+            }
+            
+            // Procesar datos para el mapa interactivo
+            currentData.primes = generatePrimesList(totalNumbers);
+            currentData.patterns = data.patrones_especiales || {};
+            currentData.metrics = data.metricas || {};
+            
+            console.log(`📊 Datos obtenidos: ${currentData.primes.length} primos`);
+        }
+        
+        // Generar lista de primos (criba local para UI rápida)
+        function generatePrimesList(limit) {
+            if (limit < 2) return [];
+            
+            const sieve = new Array(limit + 1).fill(true);
+            sieve[0] = sieve[1] = false;
+            
+            for (let i = 2; i * i <= limit; i++) {
+                if (sieve[i]) {
+                    for (let j = i * i; j <= limit; j += i) {
+                        sieve[j] = false;
+                    }
+                }
+            }
+            
+            const primes = [];
+            for (let i = 2; i <= limit; i++) {
+                if (sieve[i]) primes.push(i);
+            }
+            
+            return primes;
+        }
+        
+        // Renderizar mapa visual interactivo
+        function renderInteractiveMap() {
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.innerHTML = '';
+            
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            const primeSet = new Set(currentData.primes);
+            
+            // Configuración visual
+            const mapWidth = mapContainer.offsetWidth || 800;
+            const mapHeight = mapContainer.offsetHeight || 600;
+            const centerX = mapWidth / 2;
+            const centerY = mapHeight / 2;
+            const maxRadius = Math.min(centerX, centerY) - 50;
+            
+            // Generar elementos visuales para cada número
+            for (let number = 1; number <= totalNumbers; number++) {
+                const position = calculatePosition(number, totalNumbers, centerX, centerY, maxRadius);
+                const element = createNumberElement(number, position, primeSet.has(number));
+                mapContainer.appendChild(element);
+            }
+            
+            console.log(`🎨 Renderizados ${totalNumbers} elementos`);
+        }
+        
+        // Calcular posición según el mapeo seleccionado
+        function calculatePosition(number, total, centerX, centerY, maxRadius) {
+            const circles = mapSettings.circles;
+            const segments = mapSettings.segments;
+            
+            let circle, segment;
+            
+            switch (currentData.mapping) {
+                case 'lineal':
+                    circle = Math.floor((number - 1) / segments);
+                    segment = (number - 1) % segments;
+                    break;
+                    
+                case 'logaritmico':
+                    const logPos = Math.log(number) / Math.log(total);
+                    const totalPos = Math.floor(logPos * circles * segments);
+                    circle = Math.floor(totalPos / segments);
+                    segment = totalPos % segments;
+                    break;
+                    
+                case 'arquimedes':
+                    const theta = 2 * Math.PI * Math.sqrt(number / total);
+                    const r = Math.sqrt(number / total) * circles;
+                    circle = Math.min(Math.floor(r), circles - 1);
+                    segment = Math.floor((theta % (2 * Math.PI)) / (2 * Math.PI) * segments);
+                    break;
+                    
+                case 'fibonacci':
+                    const phi = (1 + Math.sqrt(5)) / 2;
+                    const fibTheta = 2 * Math.PI * number / phi;
+                    const fibR = Math.sqrt(number) / Math.sqrt(total) * circles;
+                    circle = Math.min(Math.floor(fibR), circles - 1);
+                    segment = Math.floor((fibTheta % (2 * Math.PI)) / (2 * Math.PI) * segments);
+                    break;
+                    
+                default:
+                    circle = Math.floor((number - 1) / segments);
+                    segment = (number - 1) % segments;
+            }
+            
+            // Convertir a coordenadas cartesianas
+            const radius = (circle + 0.5) * (maxRadius / circles);
+            const angle = (segment / segments) * 2 * Math.PI;
+            
+            return {
+                x: centerX + radius * Math.cos(angle),
+                y: centerY + radius * Math.sin(angle),
+                circle: circle,
+                segment: segment
+            };
+        }
+        
+        // Crear elemento visual para un número
+        function createNumberElement(number, position, isPrime) {
+            const element = document.createElement('div');
+            element.className = 'prime-circle';
+            element.dataset.number = number;
+            
+            // Determinar tipo y clase CSS
+            const types = determinePrimeType(number, isPrime);
+            element.className += ` ${types.join(' ')}`;
+            
+            // Tamaño basado en la posición (círculos internos más grandes)
+            const baseSize = Math.max(3, 8 - position.circle * 0.3);
+            element.style.width = `${baseSize}px`;
+            element.style.height = `${baseSize}px`;
+            
+            // Posición
+            element.style.left = `${position.x - baseSize/2}px`;
+            element.style.top = `${position.y - baseSize/2}px`;
+            
+            // Eventos
+            element.addEventListener('mouseenter', (e) => showTooltip(e, number));
+            element.addEventListener('mouseleave', hideTooltip);
+            element.addEventListener('mousemove', (e) => updateTooltipPosition(e));
+            
+            return element;
+        }
+        
+        // Determinar tipo de primo
+        function determinePrimeType(number, isPrime) {
+            if (!isPrime) return ['composite'];
+            
+            const types = [];
+            const primes = currentData.primes;
+            const primeSet = new Set(primes);
+            
+            // Verificar tipos especiales
+            if (isTwinPrime(number, primeSet) && document.getElementById('show_twins').checked) {
+                types.push('twin');
+            }
+            if (isCousinPrime(number, primeSet) && document.getElementById('show_cousins').checked) {
+                types.push('cousin');
+            }
+            if (isSexyPrime(number, primeSet) && document.getElementById('show_sexy').checked) {
+                types.push('sexy');
+            }
+            if (isSophieGermain(number, primeSet) && document.getElementById('show_sophie').checked) {
+                types.push('sophie-germain');
+            }
+            if (isPalindromic(number) && document.getElementById('show_palindromic').checked) {
+                types.push('palindromic');
+            }
+            if (isMersenne(number) && document.getElementById('show_mersenne').checked) {
+                types.push('mersenne');
+            }
+            if (isFermat(number) && document.getElementById('show_fermat').checked) {
+                types.push('fermat');
+            }
+            
+            // Si tiene múltiples tipos especiales
+            if (types.length > 1) {
+                types.push('multiple-types');
+            } else if (types.length === 0) {
+                types.push('regular');
+            }
+            
+            return types;
+        }
+        
+        // Funciones de verificación de tipos de primos
+        function isTwinPrime(n, primeSet) {
+            return primeSet.has(n-2) || primeSet.has(n+2);
+        }
+        
+        function isCousinPrime(n, primeSet) {
+            return primeSet.has(n-4) || primeSet.has(n+4);
+        }
+        
+        function isSexyPrime(n, primeSet) {
+            return primeSet.has(n-6) || primeSet.has(n+6);
+        }
+        
+        function isSophieGermain(n, primeSet) {
+            return primeSet.has(2*n + 1);
+        }
+        
+        function isPalindromic(n) {
+            const str = n.toString();
+            return str === str.split('').reverse().join('');
+        }
+        
+        function isMersenne(n) {
+            // Verificar si n = 2^p - 1 para algún primo p
+            let temp = n + 1;
+            let p = 0;
+            while (temp > 1 && temp % 2 === 0) {
+                temp /= 2;
+                p++;
+            }
+            return temp === 1 && isPrimeSimple(p);
+        }
+        
+        function isFermat(n) {
+            // Verificar si n = 2^(2^k) + 1
+            let temp = n - 1;
+            let k = 0;
+            while (temp > 1 && temp % 2 === 0) {
+                temp /= 2;
+                k++;
+            }
+            return temp === 1 && isPowerOfTwo(k);
+        }
+        
+        function isPrimeSimple(n) {
+            if (n < 2) return false;
+            for (let i = 2; i * i <= n; i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+        
+        function isPowerOfTwo(n) {
+            return n > 0 && (n & (n - 1)) === 0;
+        }
+        
+        // Mostrar tooltip con información del número
+        function showTooltip(event, number) {
+            const tooltip = document.getElementById('number-tooltip');
+            const tooltipNumber = document.getElementById('tooltip-number');
+            const tooltipProperties = document.getElementById('tooltip-properties');
+            const tooltipFormulas = document.getElementById('tooltip-formulas');
+            
+            // Número principal
+            tooltipNumber.textContent = number.toLocaleString();
+            
+            // Propiedades
+            const isPrime = currentData.primes.includes(number);
+            const properties = analyzeNumber(number, isPrime);
+            
+            tooltipProperties.innerHTML = '';
+            properties.forEach(prop => {
+                const propDiv = document.createElement('div');
+                propDiv.className = 'tooltip-property';
+                propDiv.innerHTML = `<i class="${prop.icon}"></i> ${prop.text}`;
+                tooltipProperties.appendChild(propDiv);
+            });
+            
+            // Fórmulas y explicaciones
+            const formulas = generateFormulas(number, isPrime);
+            
+            const formulasDiv = tooltipFormulas.querySelector('.tooltip-section-title').nextElementSibling || 
+                             document.createElement('div');
+            formulasDiv.innerHTML = '';
+            
+            formulas.forEach(formula => {
+                const formulaDiv = document.createElement('div');
+                formulaDiv.className = 'tooltip-formula';
+                formulaDiv.textContent = formula;
+                formulasDiv.appendChild(formulaDiv);
+            });
+            
+            if (!tooltipFormulas.querySelector('.tooltip-section-title').nextElementSibling) {
+                tooltipFormulas.appendChild(formulasDiv);
+            }
+            
+            // Posicionar y mostrar
+            updateTooltipPosition(event);
+            tooltip.classList.add('visible');
+        }
+        
+        // Ocultar tooltip
+        function hideTooltip() {
+            const tooltip = document.getElementById('number-tooltip');
+            tooltip.classList.remove('visible');
+        }
+        
+        // Actualizar posición del tooltip
+        function updateTooltipPosition(event) {
+            const tooltip = document.getElementById('number-tooltip');
+            const rect = tooltip.getBoundingClientRect();
+            
+            let x = event.clientX + 15;
+            let y = event.clientY - 10;
+            
+            // Ajustar si se sale de la pantalla
+            if (x + rect.width > window.innerWidth) {
+                x = event.clientX - rect.width - 15;
+            }
+            if (y + rect.height > window.innerHeight) {
+                y = event.clientY - rect.height - 10;
+            }
+            
+            tooltip.style.left = `${x}px`;
+            tooltip.style.top = `${y}px`;
+        }
+        
+        // Analizar propiedades del número
+        function analyzeNumber(number, isPrime) {
+            const properties = [];
+            
+            if (isPrime) {
+                properties.push({ icon: 'fas fa-crown', text: 'Número Primo' });
+                
+                const primeSet = new Set(currentData.primes);
+                
+                if (isTwinPrime(number, primeSet)) {
+                    properties.push({ icon: 'fas fa-link', text: 'Primo Gemelo' });
+                }
+                if (isCousinPrime(number, primeSet)) {
+                    properties.push({ icon: 'fas fa-users', text: 'Primo Primo' });
+                }
+                if (isSophieGermain(number, primeSet)) {
+                    properties.push({ icon: 'fas fa-female', text: 'Sophie Germain' });
+                }
+                if (isMersenne(number)) {
+                    properties.push({ icon: 'fas fa-star', text: 'Mersenne' });
+                }
+                if (isPalindromic(number)) {
+                    properties.push({ icon: 'fas fa-mirror', text: 'Palindrómico' });
+                }
+            } else {
+                properties.push({ icon: 'fas fa-calculator', text: 'Número Compuesto' });
+                
+                // Factorización básica
+                const factors = getFactors(number);
+                if (factors.length > 0 && factors.length <= 4) {
+                    properties.push({ 
+                        icon: 'fas fa-divide', 
+                        text: `Factores: ${factors.join(' × ')}`
+                    });
+                }
+            }
+            
+            // Propiedades adicionales
+            if (number % 2 === 0) {
+                properties.push({ icon: 'fas fa-balance-scale', text: 'Par' });
+            } else {
+                properties.push({ icon: 'fas fa-balance-scale-right', text: 'Impar' });
+            }
+            
+            if (isPerfectSquare(number)) {
+                properties.push({ icon: 'fas fa-square', text: 'Cuadrado Perfecto' });
+            }
+            
+            return properties;
+        }
+        
+        // Generar fórmulas matemáticas
+        function generateFormulas(number, isPrime) {
+            const formulas = [];
+            
+            if (isPrime) {
+                formulas.push(`π(${number}) ≈ ${number}/ln(${number}) ≈ ${Math.round(number / Math.log(number))}`);
+                
+                if (isMersenne(number)) {
+                    const p = Math.log2(number + 1);
+                    formulas.push(`${number} = 2^${p} - 1 (Mersenne)`);
+                }
+                
+                if (isSophieGermain(number, new Set(currentData.primes))) {
+                    formulas.push(`2×${number} + 1 = ${2*number + 1} (también primo)`);
+                }
+                
+                // Gap con el siguiente primo
+                const nextPrime = currentData.primes.find(p => p > number);
+                if (nextPrime) {
+                    formulas.push(`Gap: ${nextPrime} - ${number} = ${nextPrime - number}`);
+                }
+            } else {
+                const factors = getFactors(number);
+                if (factors.length > 0) {
+                    formulas.push(`${number} = ${factors.join(' × ')}`);
+                }
+            }
+            
+            // Propiedades modulares
+            formulas.push(`${number} ≡ ${number % 6} (mod 6)`);
+            formulas.push(`${number} ≡ ${number % 10} (mod 10)`);
+            
+            return formulas;
+        }
+        
+        // Obtener factores de un número
+        function getFactors(n) {
+            const factors = [];
+            let temp = n;
+            
+            for (let i = 2; i * i <= temp; i++) {
+                while (temp % i === 0) {
+                    factors.push(i);
+                    temp /= i;
+                }
+            }
+            
+            if (temp > 1) {
+                factors.push(temp);
+            }
+            
+            return factors;
+        }
+        
+        // Verificar si es cuadrado perfecto
+        function isPerfectSquare(n) {
+            const sqrt = Math.sqrt(n);
+            return sqrt === Math.floor(sqrt);
+        }
+        
+        // Actualizar estadísticas
+        function updateStatistics() {
+            const statsContent = document.getElementById('stats-content');
+            const totalNumbers = mapSettings.circles * mapSettings.segments;
+            const primesCount = currentData.primes.length;
+            const density = (primesCount / totalNumbers * 100).toFixed(1);
+            
+            statsContent.innerHTML = `
+                <div class="stats-item">
+                    <span>Rango:</span>
+                    <span class="stats-value">1 - ${totalNumbers.toLocaleString()}</span>
+                </div>
+                <div class="stats-item">
+                    <span>Total Primos:</span>
+                    <span class="stats-value">${primesCount.toLocaleString()}</span>
+                </div>
+                <div class="stats-item">
+                    <span>Densidad:</span>
+                    <span class="stats-value">${density}%</span>
+                </div>
+                <div class="stats-item">
+                    <span>Círculos:</span>
+                    <span class="stats-value">${mapSettings.circles}</span>
+                </div>
+                <div class="stats-item">
+                    <span>Segmentos:</span>
+                    <span class="stats-value">${mapSettings.segments}</span>
+                </div>
+                <div class="stats-item">
+                    <span>Mapeo:</span>
+                    <span class="stats-value">${currentData.mapping}</span>
+                </div>
+            `;
+        }
+        
+        // Control de zoom
+        function zoomMap(factor) {
+            mapSettings.zoom *= factor;
+            mapSettings.zoom = Math.max(0.5, Math.min(mapSettings.zoom, 5));
+            
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.style.transform = `scale(${mapSettings.zoom})`;
+            
+            console.log(`🔍 Zoom: ${mapSettings.zoom.toFixed(2)}x`);
+        }
+        
+        function resetZoom() {
+            mapSettings.zoom = 1;
+            mapSettings.centerX = 0;
+            mapSettings.centerY = 0;
+            
+            const mapContainer = document.getElementById('map-container');
+            mapContainer.style.transform = 'scale(1)';
+            
+            console.log('🔄 Zoom reset');
+        }
+        
+        // UI helpers
+        function showLoading(show) {
+            const spinner = document.getElementById('loading-spinner');
+            const button = document.getElementById('generate-btn');
+            
+            spinner.classList.toggle('active', show);
+            button.disabled = show;
+        }
+        
+        function showError(message) {
+            console.error('❌', message);
+            // Aquí podrías mostrar un toast o modal de error
+        }
+        
+        console.log('✅ Mapa Interactivo de Primos cargado completamente');
+    </script>
+</body>
+</html>

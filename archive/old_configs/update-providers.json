@@ -1,0 +1,114 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "providers": {
+    "openai": {
+      "type": "openai",
+      "base_url": "https://api.blackbox.ai/chat/completions",
+      "api_key": "$BLACKBOX_API_KEY",
+      "models": [
+        {
+          "id": "blackboxai/openai/gpt-4",
+          "name": "GPT-4",
+          "cost_per_1m_in": 30.0,
+          "cost_per_1m_out": 60.0,
+          "context_window": 8191,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/openai/gpt-4o",
+          "name": "GPT-4o",
+          "cost_per_1m_in": 2.5,
+          "cost_per_1m_out": 10.0,
+          "context_window": 128000,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/openai/gpt-4o-mini",
+          "name": "GPT-4o Mini",
+          "cost_per_1m_in": 0.15,
+          "cost_per_1m_out": 0.6,
+          "context_window": 128000,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/openai/gpt-4.1",
+          "name": "GPT-4.1",
+          "cost_per_1m_in": 2.0,
+          "cost_per_1m_out": 8.0,
+          "context_window": 1047576,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/openai/o1",
+          "name": "OpenAI o1",
+          "cost_per_1m_in": 15.0,
+          "cost_per_1m_out": 60.0,
+          "context_window": 200000,
+          "default_max_tokens": 5000
+        }
+      ]
+    },
+    "anthropic": {
+      "type": "openai",
+      "base_url": "https://api.blackbox.ai/chat/completions",
+      "api_key": "$BLACKBOX_API_KEY",
+      "models": [
+        {
+          "id": "blackboxai/anthropic/claude-3-sonnet",
+          "name": "Claude 3 Sonnet",
+          "cost_per_1m_in": 3.0,
+          "cost_per_1m_out": 15.0,
+          "context_window": 200000,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/anthropic/claude-3.5-sonnet",
+          "name": "Claude 3.5 Sonnet",
+          "cost_per_1m_in": 3.0,
+          "cost_per_1m_out": 15.0,
+          "context_window": 200000,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/anthropic/claude-opus-4",
+          "name": "Claude Opus 4",
+          "cost_per_1m_in": 15.0,
+          "cost_per_1m_out": 75.0,
+          "context_window": 200000,
+          "default_max_tokens": 5000
+        }
+      ]
+    },
+    "google": {
+      "type": "openai",
+      "base_url": "https://api.blackbox.ai/chat/completions",
+      "api_key": "$BLACKBOX_API_KEY",
+      "models": [
+        {
+          "id": "blackboxai/google/gemini-pro-1.5",
+          "name": "Gemini 1.5 Pro",
+          "cost_per_1m_in": 1.25,
+          "cost_per_1m_out": 5.0,
+          "context_window": 2000000,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/google/gemini-2.5-pro",
+          "name": "Gemini 2.5 Pro",
+          "cost_per_1m_in": 1.25,
+          "cost_per_1m_out": 10.0,
+          "context_window": 1048576,
+          "default_max_tokens": 5000
+        },
+        {
+          "id": "blackboxai/google/gemma-3-27b-it",
+          "name": "Gemma 3 27B",
+          "cost_per_1m_in": 0.09,
+          "cost_per_1m_out": 0.17,
+          "context_window": 131072,
+          "default_max_tokens": 5000
+        }
+      ]
+    }
+  }
+}
