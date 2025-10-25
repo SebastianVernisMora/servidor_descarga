@@ -20,7 +20,7 @@ if lsof -ti:3000 >/dev/null 2>&1; then
     sleep 2
 fi
 
-cd /home/admin
+cd /home/sebastianvernis/servidor_descarga
 
 # Verificar archivos necesarios
 echo "📂 Verificando archivos..."
@@ -43,7 +43,7 @@ fi
 echo "✅ Todos los archivos verificados"
 
 # Contar mapas generados
-MAP_COUNT=$(python3 -c "
+MAP_COUNT=$(venv/bin/python -c "
 import json
 with open('static_maps/index.json', 'r') as f:
     data = json.load(f)
@@ -56,7 +56,7 @@ echo "📊 $MAP_COUNT mapas pre-generados listos"
 echo "🚀 Iniciando aplicación estática en puerto 3000..."
 
 # Ejecutar en background con logs
-nohup python3 static_app.py > static_deployment.log 2>&1 &
+nohup venv/bin/python static_app.py > static_deployment.log 2>&1 &
 STATIC_PID=$!
 
 echo "🔄 Esperando a que la aplicación inicie..."
@@ -70,7 +70,7 @@ if ps -p $STATIC_PID > /dev/null 2>&1; then
     echo "🧪 Verificando conectividad..."
     
     for i in {1..10}; do
-        if python3 -c "
+        if venv/bin/python -c "
 import requests
 try:
     response = requests.get('http://localhost:3000/api/info', timeout=3)
@@ -87,7 +87,7 @@ except:
     
     # Test final completo
     echo "🎯 Ejecutando tests finales..."
-    python3 -c "
+    venv/bin/python -c "
 import requests
 import json
 
