@@ -135,6 +135,24 @@
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
         
+        /* Estilos específicos para campos numéricos */
+        input[type="number"] {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        
         .form-input:focus, .form-select:focus {
             outline: none;
             border-color: var(--primary-color);
@@ -854,19 +872,13 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Círculos Concéntricos (5-30):</label>
-                    <input type="range" id="num_circulos" min="5" max="30" value="15" class="form-input">
-                    <div class="range-container">
-                        <div class="range-value" id="circles-value">15</div>
-                    </div>
+                    <label class="form-label">Círculos Concéntricos (1-10,000):</label>
+                    <input type="number" id="num_circulos" min="1" max="10000" value="10000" class="form-input" placeholder="Ingrese número de círculos">
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Segmentos por Círculo (12-60):</label>
-                    <input type="range" id="divisiones_por_circulo" min="12" max="60" value="36" class="form-input">
-                    <div class="range-container">
-                        <div class="range-value" id="segments-value">36</div>
-                    </div>
+                    <label class="form-label">Segmentos por Círculo (2-1,300):</label>
+                    <input type="number" id="divisiones_por_circulo" min="2" max="1300" value="1300" class="form-input" placeholder="Ingrese número de segmentos">
                 </div>
                 
                 <div class="form-group">
@@ -1024,26 +1036,26 @@
                 <div class="help-parameter">
                     <div class="help-parameter-name">
                         <i class="fas fa-circle-notch"></i>
-                        Círculos Concéntricos (5-30)
+                        Círculos Concéntricos (1-10,000)
                     </div>
                     <div class="help-parameter-desc">
-                        Define cuántos anillos concéntricos se crearán desde el centro. Cada círculo representa un nivel de distancia del origen. Mayor número = más resolución pero más tiempo de cálculo.
+                        Define cuántos anillos concéntricos se crearán desde el centro. Cada círculo representa un nivel de distancia del origen. ¡Ahora puedes usar hasta 10,000 círculos para visualizaciones ultra-detalladas!
                     </div>
                     <div class="help-parameter-example">
-                        Ejemplo: 15 círculos × 36 segmentos = 540 posiciones totales
+                        Ejemplo: 10,000 círculos × 1,300 segmentos = 13,000,000 posiciones totales
                     </div>
                 </div>
                 
                 <div class="help-parameter">
                     <div class="help-parameter-name">
                         <i class="fas fa-chart-pie"></i>
-                        Segmentos por Círculo (12-60)
+                        Segmentos por Círculo (2-1,300)
                     </div>
                     <div class="help-parameter-desc">
-                        Número de divisiones angulares en cada círculo. Determina la resolución angular de la visualización. Más segmentos = mayor precisión angular.
+                        Número de divisiones angulares en cada círculo. Determina la resolución angular de la visualización. ¡Ahora hasta 1,300 segmentos para resolución extrema!
                     </div>
                     <div class="help-parameter-example">
-                        36 segmentos = 360°/36 = 10° por segmento
+                        1,300 segmentos = 360°/1,300 = 0.28° por segmento (resolución ultra-fina)
                     </div>
                 </div>
             </div>
@@ -1063,7 +1075,7 @@
                         Distribución secuencial estándar. Los números se colocan en orden desde el centro hacia afuera, círculo por círculo.
                     </div>
                     <div class="help-parameter-example">
-                        1→2→3...→36 (círculo 1), 37→38→...→72 (círculo 2)
+                        1→2→3...→1,300 (círculo 1), 1,301→1,302→...→2,600 (círculo 2)
                     </div>
                 </div>
                 
@@ -1281,24 +1293,28 @@
         
         // Configurar controles
         function initializeControls() {
-            const circlesSlider = document.getElementById('num_circulos');
-            const segmentsSlider = document.getElementById('divisiones_por_circulo');
-            const circlesValue = document.getElementById('circles-value');
-            const segmentsValue = document.getElementById('segments-value');
+            const circlesInput = document.getElementById('num_circulos');
+            const segmentsInput = document.getElementById('divisiones_por_circulo');
             
             // Debounce para mejor performance
             let debounceTimer;
             
-            circlesSlider.addEventListener('input', function() {
-                circlesValue.textContent = this.value;
+            // Validar y formatear entrada de círculos
+            circlesInput.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                if (value > 10000) this.value = 10000;
+                if (value < 1) this.value = 1;
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(generateMap, 300);
+                debounceTimer = setTimeout(generateMap, 500);
             });
             
-            segmentsSlider.addEventListener('input', function() {
-                segmentsValue.textContent = this.value;
+            // Validar y formatear entrada de segmentos
+            segmentsInput.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                if (value > 1300) this.value = 1300;
+                if (value < 2) this.value = 2;
                 clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(generateMap, 300);
+                debounceTimer = setTimeout(generateMap, 500);
             });
             
             // Selector de mapeo
