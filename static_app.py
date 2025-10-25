@@ -99,7 +99,7 @@ def encontrar_mapa_similar(parametros):
 @app.route('/')
 def home():
     """Página principal - interfaz mejorada interactiva."""
-    return send_file(Path("/home/admin/index_interactive_enhanced.html"))
+    return send_file(STATIC_MAPS_DIR / "index.html")
 
 @app.route('/enhanced')
 def enhanced_interface():
