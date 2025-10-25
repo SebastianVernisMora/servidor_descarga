@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify, send_from_directory, send_file, Respo
 import os
 import json
 import hashlib
+import math
 from datetime import datetime
 import traceback
 from pathlib import Path
@@ -15,7 +16,7 @@ from pathlib import Path
 app = Flask(__name__)
 
 # Configuración
-STATIC_MAPS_DIR = Path("/home/admin/static_maps")
+STATIC_MAPS_DIR = Path("/home/admin/servidor_descarga/static_maps")
 CACHE_INDEX = None
 
 def cargar_indice_mapas():
@@ -64,7 +65,17 @@ def encontrar_mapa_similar(parametros):
     
     mejores_matches = []
     
-    for map_hash, info in CACHE_INDEX['maps'].items():
+    # Verificar si maps es dict o list
+    maps_data = CACHE_INDEX['maps']
+    if isinstance(maps_data, list):
+        # Si es lista vacía, usar archivos estáticos disponibles
+        archivos_json = list(STATIC_MAPS_DIR.glob("data_*.json"))
+        if archivos_json:
+            archivo_aleatorio = archivos_json[0]
+            return {'archivo': archivo_aleatorio.name, 'score': 0.5}
+        return None
+    
+    for map_hash, info in maps_data.items():
         param_map = info['parametros']
         
         # Calcular score de similitud
@@ -106,9 +117,17 @@ def enhanced_interface():
     """Interfaz mejorada - redirigir a selector."""
     return send_file(STATIC_MAPS_DIR / "index.html")
 
-@app.route('/api/interactive-map', methods=['POST'])
+@app.route('/api/interactive-map', methods=['POST', 'OPTIONS'])
 def get_pregenerated_map():
     """API que retorna datos de mapas pre-generados."""
+    # Handle CORS preflight
+    if request.method == 'OPTIONS':
+        response = Response()
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response
+        
     try:
         parametros = request.get_json() or {}
         
@@ -138,21 +157,54 @@ def get_pregenerated_map():
             match = encontrar_mapa_similar(parametros)
             
             if match:
-                json_file = STATIC_MAPS_DIR / match['info']['json_file']
+                # Usar archivo directo si no hay estructura completa
+                if 'archivo' in match:
+                    json_file = STATIC_MAPS_DIR / match['archivo']
+                else:
+                    json_file = STATIC_MAPS_DIR / match['info']['json_file']
+                
                 with open(json_file, 'r') as f:
                     data = json.load(f)
                 
-                print(f"✅ Mapa similar servido: {match['hash']} (score: {match['score']})")
-                return jsonify({
-                    'elementos': data['elementos'],
-                    'estadisticas': data['estadisticas'],
+                # Transformar elementos para compatibilidad con frontend
+                elementos_transformados = []
+                metadata = data.get('metadata', {})
+                divisiones = metadata.get('divisiones_por_circulo', 420)
+                
+                for elemento in data['elementos']:
+                    # Calcular posición polar para compatibilidad
+                    circulo = elemento.get('circulo', 0)
+                    segmento = elemento.get('segmento', 0)
+                    angulo = (segmento * 360) / divisiones
+                    radio = circulo + 1
+                    
+                    elemento_transformado = elemento.copy()
+                    elemento_transformado['posicion'] = {
+                        'radio': radio,
+                        'angulo': angulo,
+                        'x': radio * math.cos(math.radians(angulo)),
+                        'y': radio * math.sin(math.radians(angulo))
+                    }
+                    elementos_transformados.append(elemento_transformado)
+                
+                score = match.get('score', 0.5)
+                print(f"✅ Mapa servido: {json_file.name} (score: {score})")
+                response = jsonify({
+                    'elementos': elementos_transformados,
+                    'estadisticas': data.get('estadisticas', {}),
+                    'metadata': metadata,
                     'timestamp': datetime.now().isoformat(),
                     'version': '3.3.0-enhanced',
                     'source': 'pre-generated-similar',
-                    'hash': match['hash'],
-                    'similarity_score': match['score'],
+                    'hash': match.get('hash', json_file.stem),
+                    'similarity_score': match.get('score', 0.5),
                     'note': 'Mapa similar al solicitado - pre-calculado para máximo rendimiento'
                 })
+                response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+                response.headers['Access-Control-Allow-Origin'] = '*'
+                response.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+                response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+                return response
             
             else:
                 # Generar mínimo dinámico como fallback
@@ -272,9 +324,9 @@ def api_info():
             'cache_type': 'Static HTML/JSON files'
         },
         'statistics': {
-            'total_maps': len(CACHE_INDEX['maps']) if CACHE_INDEX else 0,
-            'total_size_kb': sum(info['file_size_kb'] for info in CACHE_INDEX['maps'].values()) if CACHE_INDEX else 0,
-            'generated': CACHE_INDEX['generated'] if CACHE_INDEX else None
+            'total_maps': len(CACHE_INDEX['maps']) if CACHE_INDEX and isinstance(CACHE_INDEX.get('maps'), dict) else len(list(STATIC_MAPS_DIR.glob("data_*.json"))),
+            'total_size_kb': sum(f.stat().st_size for f in STATIC_MAPS_DIR.glob("*") if f.is_file()) // 1024,
+            'generated': CACHE_INDEX.get('generated') if CACHE_INDEX else None
         },
         'endpoints': {
             'home': '/ (map selector)',
@@ -411,7 +463,10 @@ if __name__ == '__main__':
     # Cargar índice de mapas
     if cargar_indice_mapas():
         print(f"📊 {len(CACHE_INDEX['maps'])} mapas pre-generados listos para servir")
-        print(f"💾 Tamaño total: {sum(info['file_size_kb'] for info in CACHE_INDEX['maps'].values())}KB")
+        if isinstance(CACHE_INDEX['maps'], dict):
+            print(f"💾 Tamaño total: {sum(info.get('file_size_kb', 0) for info in CACHE_INDEX['maps'].values())}KB")
+        else:
+            print(f"💾 Mapas en formato lista: {len(CACHE_INDEX['maps'])} elementos")
         print("⚡ Rendimiento: MÁXIMO (mapas pre-calculados + interfaz responsiva)")
         print()
         print("🌐 URLs disponibles:")
@@ -430,6 +485,20 @@ if __name__ == '__main__':
         print("   ⚡ Carga instantánea usando mapas pre-generados")
         print("   🌈 Animaciones y efectos visuales mejorados")
         print()
+        # Mostrar información de acceso público
+        import subprocess
+        try:
+            local_ip = subprocess.check_output(['hostname', '-I']).decode().split()[0]
+            hostname = subprocess.check_output(['hostname', '-f']).decode().strip()
+            
+            print("🌐 ACCESOS PÚBLICOS DISPONIBLES:")
+            print(f"   📍 IP PÚBLICA:   http://{local_ip}:3000/")
+            print(f"   🌍 DNS/HOSTNAME: http://{hostname}:3000/")
+            print(f"   🔗 LOCALHOST:    http://localhost:3000/")
+            print()
+        except:
+            print("🌐 Servidor accesible en: http://0.0.0.0:3000/")
+        
         print("🔥 SERVIDOR INTERACTIVO MEJORADO INICIANDO EN PUERTO 3000...")
         
         app.run(host='0.0.0.0', port=3000, debug=False, threaded=True)

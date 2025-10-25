@@ -854,19 +854,13 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Círculos Concéntricos (5-30):</label>
-                    <input type="range" id="num_circulos" min="5" max="30" value="15" class="form-input">
-                    <div class="range-container">
-                        <div class="range-value" id="circles-value">15</div>
-                    </div>
+                    <label class="form-label">Círculos Concéntricos (Rango: 5-10000):</label>
+                    <input type="number" id="num_circulos" min="5" max="10000" value="10000" class="form-input">
                 </div>
                 
                 <div class="form-group">
-                    <label class="form-label">Segmentos por Círculo (12-60):</label>
-                    <input type="range" id="divisiones_por_circulo" min="12" max="60" value="36" class="form-input">
-                    <div class="range-container">
-                        <div class="range-value" id="segments-value">36</div>
-                    </div>
+                    <label class="form-label">Segmentos por Círculo (Rango: 12-1300):</label>
+                    <input type="number" id="divisiones_por_circulo" min="12" max="1300" value="1300" class="form-input">
                 </div>
                 
                 <div class="form-group">
@@ -946,7 +940,7 @@
             <button class="generate-button" id="generate-btn">
                 <span class="loading-spinner" id="loading-spinner"></span>
                 <i class="fas fa-rocket"></i>
-                Generar Mapa Responsivo
+                Generar Mapa Interactivo
             </button>
             
             <!-- Nuevo botón para descargar imagen -->
@@ -1024,7 +1018,7 @@
                 <div class="help-parameter">
                     <div class="help-parameter-name">
                         <i class="fas fa-circle-notch"></i>
-                        Círculos Concéntricos (5-30)
+                        Círculos Concéntricos (5-10000)
                     </div>
                     <div class="help-parameter-desc">
                         Define cuántos anillos concéntricos se crearán desde el centro. Cada círculo representa un nivel de distancia del origen. Mayor número = más resolución pero más tiempo de cálculo.
@@ -1037,7 +1031,7 @@
                 <div class="help-parameter">
                     <div class="help-parameter-name">
                         <i class="fas fa-chart-pie"></i>
-                        Segmentos por Círculo (12-60)
+                        Segmentos por Círculo (12-1300)
                     </div>
                     <div class="help-parameter-desc">
                         Número de divisiones angulares en cada círculo. Determina la resolución angular de la visualización. Más segmentos = mayor precisión angular.
@@ -1152,7 +1146,7 @@
                         Primos Sexy
                     </div>
                     <div class="help-prime-desc">
-                        Pares de primos que difieren en 6 unidades. El nombre viene de "sex" (seis en latín), no tiene connotación sexual.
+                        Pares de primos que difieren en 6 unidades. El nombre viene de \"sex\" (seis en latín), no tiene connotación sexual.
                     </div>
                     <div class="help-prime-formula">Pares: (5,11), (7,13), (13,19), (23,29), (31,37)...</div>
                 </div>
@@ -1207,7 +1201,7 @@
                         Números Compuestos
                     </div>
                     <div class="help-prime-desc">
-                        Números enteros mayores que 1 que no son primos. Tienen factores propios y forman el "fondo" contra el cual destacan los primos.
+                        Números enteros mayores que 1 que no son primos. Tienen factores propios y forman el \"fondo\" contra el cual destacan los primos.
                     </div>
                     <div class="help-prime-formula">Ejemplos: 4=2×2, 6=2×3, 8=2³, 9=3², 10=2×5...</div>
                 </div>
@@ -1276,43 +1270,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('🚀 Inicializando Mapa Mejorado...');
             initializeControls();
-            generateMap();
+            // Quitar la generación automática al cargar la página
+            console.log('Configurado. Esperando clic en botón Generar.');
         });
         
         // Configurar controles
         function initializeControls() {
-            const circlesSlider = document.getElementById('num_circulos');
-            const segmentsSlider = document.getElementById('divisiones_por_circulo');
-            const circlesValue = document.getElementById('circles-value');
-            const segmentsValue = document.getElementById('segments-value');
-            
-            // Debounce para mejor performance
-            let debounceTimer;
-            
-            circlesSlider.addEventListener('input', function() {
-                circlesValue.textContent = this.value;
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(generateMap, 300);
-            });
-            
-            segmentsSlider.addEventListener('input', function() {
-                segmentsValue.textContent = this.value;
-                clearTimeout(debounceTimer);
-                debounceTimer = setTimeout(generateMap, 300);
-            });
-            
-            // Selector de mapeo
-            document.getElementById('tipo_mapeo').addEventListener('change', generateMap);
-            
-            // Checkboxes
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    this.closest('.checkbox-item').classList.toggle('checked', this.checked);
-                    generateMap();
-                });
-                checkbox.closest('.checkbox-item').classList.toggle('checked', checkbox.checked);
-            });
+            const circlesInput = document.getElementById('num_circulos');
+            const segmentsInput = document.getElementById('divisiones_por_circulo');
             
             // Controles de zoom
             document.getElementById('zoom-in').addEventListener('click', () => zoomMap(1.3));
@@ -1783,31 +1748,31 @@
             statsContent.innerHTML = `
                 <div class="stats-item">
                     <span class="stats-label">Rango:</span>
-                    <span class="stats-value">1 - ${stats.total_numeros.toLocaleString()}</span>
+                    <span class="stats-value">${stats.total_numeros ? '1 - ' + stats.total_numeros.toLocaleString() : 'Cargando...'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Total Primos:</span>
-                    <span class="stats-value">${stats.total_primos.toLocaleString()}</span>
+                    <span class="stats-value">${stats.total_primos ? stats.total_primos.toLocaleString() : '0'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Densidad:</span>
-                    <span class="stats-value">${stats.densidad_primos.toFixed(2)}%</span>
+                    <span class="stats-value">${stats.densidad_primos ? stats.densidad_primos.toFixed(2) + '%' : '0%'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Gemelos:</span>
-                    <span class="stats-value">${stats.patrones.gemelos}</span>
+                    <span class="stats-value">${stats.patrones ? stats.patrones.gemelos : '0'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Sophie Germain:</span>
-                    <span class="stats-value">${stats.patrones.sophie_germain}</span>
+                    <span class="stats-value">${stats.patrones ? stats.patrones.sophie_germain : '0'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Mersenne:</span>
-                    <span class="stats-value">${stats.patrones.mersenne}</span>
+                    <span class="stats-value">${stats.patrones ? stats.patrones.mersenne : '0'}</span>
                 </div>
                 <div class="stats-item">
                     <span class="stats-label">Mapeo:</span>
-                    <span class="stats-value">${stats.configuracion.mapeo}</span>
+                    <span class="stats-value">${stats.configuracion ? stats.configuracion.mapeo : 'Cargando...'}</span>
                 </div>
             `;
         }

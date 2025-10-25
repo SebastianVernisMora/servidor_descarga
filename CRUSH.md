@@ -1,5 +1,32 @@
 # CRUSH.md - Development Guide
 
+## 🔥 SISTEMA PM2 - GENERADOR PERSISTENTE (1,168+ MAPAS)
+```bash
+# 🚀 INICIAR GENERADOR PERSISTENTE (estilo PM2)
+./pm2_start.sh
+
+# 📊 VER ESTADO DEL GENERADOR
+./pm2_status.sh
+
+# 📈 ESTADÍSTICAS DETALLADAS
+./pm2_stats.sh
+
+# 📋 VER LOGS EN TIEMPO REAL
+./pm2_logs.sh
+
+# 🔄 REINICIAR GENERADOR
+./pm2_restart.sh
+
+# 🛑 DETENER GENERADOR PERSISTENTE
+./pm2_stop.sh
+
+# 🌐 DESPLIEGUE PÚBLICO PUERTO 3000 - DNS e IP 
+./deploy_public_port3000.sh
+
+# 📊 VERIFICAR SERVIDOR PÚBLICO
+python3 -c "import requests; print(requests.get('http://localhost:3000/api/info').json())"
+```
+
 ## Build/Run Commands
 ```bash
 # Run Flask app (default port 3000) - MAPA INTERACTIVO AVANZADO
@@ -10,10 +37,6 @@ python3 app_optimized.py --port=8080
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Run single test file
-python3 test_memory_optimization.py
-python3 test_flask_route.py
 
 # Check system info and validate setup
 curl http://localhost:3000/api/info
@@ -28,19 +51,13 @@ curl http://localhost:3000/api/number/97
 curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: application/json" -d '{"num_circulos": 10, "divisiones_por_circulo": 24}'
 ```
 
-## Desplegar Aplicación ESTÁTICA (RENDIMIENTO MÁXIMO)
+## APLICACIÓN ESTÁTICA (RENDIMIENTO MÁXIMO)
 ```bash
 # 🔥 PRE-GENERAR MAPAS ESTÁTICOS (Una sola vez)
 python3 pregenerate_static_maps.py
 
 # 🌐 DESPLEGAR EN PUERTO PÚBLICO 3000 - VERSIÓN ESTÁTICA
-./deploy_static_final.sh
-
-# Ver logs de la aplicación estática
-tail -f static_deployment.log
-
-# Detener aplicación estática
-pkill -f static_app.py
+python3 static_app.py --port=3000
 
 # Verificar mapas disponibles
 curl http://localhost:3000/api/maps | head -20
