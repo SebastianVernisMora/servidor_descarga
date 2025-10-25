@@ -620,7 +620,7 @@ def comprimir_imagen(datos_img, nivel_compresion=6):
         return datos_img, False
 
 def generar_visualizacion_completa(
-    num_circulos=15, divisiones_por_circulo=36,
+    num_circulos=10000, divisiones_por_circulo=1300,
     mostrar_primos_gemelos=True, mostrar_primos_primos=True, mostrar_primos_sexy=True,
     mostrar_primos_regulares=True, mostrar_sophie_germain=True, mostrar_palindromos=False,
     mostrar_mersenne=False, mostrar_fermat=False,
@@ -1105,8 +1105,8 @@ def descargar_imagen():
         
         # Extraer parámetros (mismos que el endpoint /generar)
         parametros = {
-            'num_circulos': int(datos.get('num_circulos', 15)),
-            'divisiones_por_circulo': int(datos.get('divisiones_por_circulo', 36)),
+            'num_circulos': int(datos.get('num_circulos', 10000)),
+            'divisiones_por_circulo': int(datos.get('divisiones_por_circulo', 1300)),
             'mostrar_primos_gemelos': bool(datos.get('mostrar_primos_gemelos', True)),
             'mostrar_primos_primos': bool(datos.get('mostrar_primos_primos', True)),
             'mostrar_primos_sexy': bool(datos.get('mostrar_primos_sexy', True)),
@@ -1179,8 +1179,8 @@ def generar():
         
         # Extraer TODOS los parámetros posibles
         parametros = {
-            'num_circulos': int(datos.get('num_circulos', 15)),
-            'divisiones_por_circulo': int(datos.get('divisiones_por_circulo', 36)),
+            'num_circulos': int(datos.get('num_circulos', 10000)),
+            'divisiones_por_circulo': int(datos.get('divisiones_por_circulo', 1300)),
             'mostrar_primos_gemelos': bool(datos.get('mostrar_primos_gemelos', True)),
             'mostrar_primos_primos': bool(datos.get('mostrar_primos_primos', True)),
             'mostrar_primos_sexy': bool(datos.get('mostrar_primos_sexy', True)),
@@ -1506,8 +1506,8 @@ def generate_interactive_map_data():
         datos = request.get_json() or {}
         
         # Parámetros del mapa
-        num_circulos = int(datos.get('num_circulos', 15))
-        divisiones_por_circulo = int(datos.get('divisiones_por_circulo', 36))
+        num_circulos = int(datos.get('num_circulos', 10000))
+        divisiones_por_circulo = int(datos.get('divisiones_por_circulo', 1300))
         tipo_mapeo = datos.get('tipo_mapeo', 'lineal')
         
         # Filtros de tipos de primos
