@@ -1499,6 +1499,36 @@ def analyze_number(number):
             'timestamp': datetime.now().isoformat()
         }), 500
 
+@app.route('/hires')
+def hires_maps_index():
+    """Página de índice de mapas de alta resolución."""
+    return send_from_directory('static_maps_hires', 'index.html')
+
+@app.route('/api/hires-map/<map_hash>')
+def get_hires_map(map_hash):
+    """Servir mapa de alta resolución pre-generado."""
+    try:
+        file_path = f"static_maps_hires/hires_{map_hash}.json"
+        if os.path.exists(file_path):
+            return send_file(file_path, as_attachment=False, mimetype='application/json')
+        else:
+            return jsonify({'error': f'Mapa {map_hash} no encontrado'}), 404
+    except Exception as e:
+        return jsonify({'error': f'Error sirviendo mapa: {str(e)}'}), 500
+
+@app.route('/api/hires-maps')
+def list_hires_maps():
+    """Listar todos los mapas de alta resolución disponibles."""
+    try:
+        index_path = "static_maps_hires/index_hires.json"
+        if os.path.exists(index_path):
+            with open(index_path, 'r') as f:
+                return jsonify(json.load(f))
+        else:
+            return jsonify({'error': 'Índice de mapas de alta resolución no encontrado'}), 404
+    except Exception as e:
+        return jsonify({'error': f'Error listando mapas: {str(e)}'}), 500
+
 @app.route('/api/interactive-map', methods=['POST'])
 def generate_interactive_map_data():
     """Generar datos para el mapa interactivo HTML responsivo."""
