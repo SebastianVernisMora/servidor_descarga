@@ -1,0 +1,6 @@
+Test de auto-deploy - $(date)
+
+Este archivo prueba que el sistema de despliegue automático funciona correctamente.
+Cuando se haga commit y push de este archivo, debería activarse el webhook.
+
+Timestamp: 2025-10-26T04:05:00
