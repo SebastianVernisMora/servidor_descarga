@@ -1,0 +1,43 @@
+🚀 Iniciando servidor MEJORADO con interfaz interactiva avanzada...
+======================================================================
+✅ Índice cargado: 0 mapas disponibles
+📊 0 mapas pre-generados listos para servir
+💾 Mapas en formato lista: 0 elementos
+⚡ Rendimiento: MÁXIMO (mapas pre-calculados + interfaz responsiva)
+
+🌐 URLs disponibles:
+   🎮 Interfaz Interactiva:   http://localhost:3000/
+   🎯 API Mapas Dinámicos:    POST http://localhost:3000/api/interactive-map
+   📊 Lista de Mapas:         GET http://localhost:3000/api/maps
+   🎲 Mapa Aleatorio:         GET http://localhost:3000/api/random-map
+   📈 Info del Sistema:       GET http://localhost:3000/api/info
+   🧮 Análisis de Números:    GET http://localhost:3000/api/number/<n>
+
+🎨 NUEVAS CARACTERÍSTICAS:
+   ✨ Tooltips matemáticos avanzados con análisis en tiempo real
+   🔍 Controles de zoom y navegación mejorados
+   📱 Diseño completamente responsive para móviles
+   🎯 8 tipos diferentes de primos con visualización especializada
+   ⚡ Carga instantánea usando mapas pre-generados
+   🌈 Animaciones y efectos visuales mejorados
+
+🌐 ACCESOS PÚBLICOS DISPONIBLES:
+   📍 IP PÚBLICA:   http://172.31.40.57:3000/
+   🌍 DNS/HOSTNAME: http://ip-172-31-40-57:3000/
+   🔗 LOCALHOST:    http://localhost:3000/
+
+🔥 SERVIDOR INTERACTIVO MEJORADO INICIANDO EN PUERTO 3000...
+ * Serving Flask app 'static_app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://172.31.40.57:3000
+Press CTRL+C to quit
+127.0.0.1 - - [25/Oct/2025 11:43:17] "GET /api/info HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 11:43:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 11:43:47] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [25/Oct/2025 11:43:56] "POST /api/interactive-map HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 11:44:31] "GET /api/number/41 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 11:44:34] "GET /api/number/241 HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2025 11:44:36] "GET /api/number/241 HTTP/1.1" 200 -
