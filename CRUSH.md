@@ -51,6 +51,26 @@ curl http://localhost:3000/api/number/97
 curl -X POST http://localhost:3000/api/interactive-map -H "Content-Type: application/json" -d '{"num_circulos": 10, "divisiones_por_circulo": 24}'
 ```
 
+## 🚀 AUTO-DEPLOY (DESPLIEGUE AUTOMÁTICO)
+```bash
+# ⚙️ CONFIGURAR UNA SOLA VEZ
+./setup_autodeploy.sh
+
+# 📊 MONITOREAR AUTO-DEPLOY
+sudo systemctl status autodeploy        # Estado del servicio
+tail -f logs/auto_deploy.log           # Logs en tiempo real
+curl http://localhost:9000/status      # Estado API
+
+# 🔧 CONTROL MANUAL
+curl -X POST http://localhost:9000/manual-deploy  # Deploy manual
+cat logs/deploy_history.log                       # Historial deploys
+
+# 🔄 FLUJO AUTOMÁTICO:
+# 1. Push a master/main → GitHub webhook → Auto-deploy
+# 2. git pull + pip install + pm2 restart + health check
+# 3. Servidor actualizado automáticamente
+```
+
 ## APLICACIÓN ESTÁTICA (RENDIMIENTO MÁXIMO)
 ```bash
 # 🔥 PRE-GENERAR MAPAS ESTÁTICOS (Una sola vez)
