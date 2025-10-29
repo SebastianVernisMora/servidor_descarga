@@ -16,7 +16,7 @@ from pathlib import Path
 app = Flask(__name__)
 
 # Configuración
-STATIC_MAPS_DIR = Path("/home/sebastianvernis/servidor_descarga/static_maps")
+STATIC_MAPS_DIR = Path(__file__).parent.resolve() / "static_maps"
 CACHE_INDEX = None
 
 def cargar_indice_mapas():
